@@ -10,7 +10,7 @@ const base = import.meta.env.BASE_URL || "/";
 const SAATCHI_PROFILE_URL = "https://www.saatchiart.com/en-au/solara-meridian-studio/";
 
 // IMPORTANT: set this to your actual Redbubble store URL (keep it quiet + secondary).
-const REDBUBBLE_URL = "https://www.redbubble.com/";
+const REDBUBBLE_URL = "https://www.redbubble.com/people/SamFrederiksen/shop";
 
 const articles = (await getCollection("articles"))
   .sort((a, b) => (b.data.publishedAt as Date).getTime() - (a.data.publishedAt as Date).getTime())
