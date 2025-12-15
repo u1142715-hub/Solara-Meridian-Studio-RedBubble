@@ -3,7 +3,7 @@ import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   site: "https://u1142715-hub.github.io",
-  base: "/solara-meridian-studio",
+  base: "/solara-meridian-studio-Redbubble",
 
   // Critical for GitHub Pages: ensures /route/ maps to /route/index.html
   trailingSlash: "always",
