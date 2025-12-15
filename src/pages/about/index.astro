@@ -1,0 +1,172 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Section from "../../components/ui/Section.astro";
+
+const SAATCHI_PROFILE_URL = "https://www.saatchiart.com/en-au/solara-meridian-studio";
+const base = import.meta.env.BASE_URL || "/";
+
+---
+
+<BaseLayout
+  title="About · Solara Meridian Studio"
+  description="A quiet origin shaped by craft, systems thinking, and restraint."
+>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div>
+        <div class="hero__kicker">About</div>
+        <h1 class="hero__title">A quiet origin: craft, technology, and restraint.</h1>
+        <p class="hero__subtitle">
+          The work here is built slowly and deliberately—designed for calm ownership, long attention,
+          and environments that feel intentional rather than generic.
+        </p>
+
+      <div class="hero__actions">
+  <a class="btn btn--primary btn--block-mobile" href={`${base}art/`}>View the work</a>
+  <a class="btn btn--ghost btn--block-mobile" href={`${base}provenance/`}>Provenance & Authenticity</a>
+</div>
+
+
+        <div class="hero__meta">
+          Purchases and fulfilment are handled securely through Saatchi Art.
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <div class="hero__media-inner">
+          <div class="card">
+            <div class="card__eyebrow">Positioning</div>
+            <div class="card__title">Quiet architecture for the mind</div>
+            <p class="card__body">
+              Not made for noise—built to hold meaning without explaining itself too loudly.
+            </p>
+            <div class="mt-2">
+              <a
+                class="btn btn--subtle btn--block"
+                href={SAATCHI_PROFILE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View on Saatchi Art
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORIGIN -->
+  <Section variant="alt">
+    <div class="container">
+      <div class="section__heading">
+        <div class="section__eyebrow">Origin</div>
+        <h2 class="section__title">How the work formed</h2>
+      </div>
+
+      <div class="card">
+        <!-- Framing sentence: critical for hybrid model -->
+        <p class="card__body" style="opacity: 0.9;">
+          The context below is not a justification of the work, but the conditions that made it inevitable.
+        </p>
+
+        <p class="card__body">
+          I didn’t begin as a gifted prodigy, and I didn’t arrive at art through a single defining moment.
+          The path was slower—shaped by persistence more than talent.
+        </p>
+
+        <p class="card__body">
+          As a child, I drew like many kids do: simple sketches, small ideas. Over time, drawing faded into the
+          background—not because creativity disappeared, but because it began expressing itself in other forms.
+        </p>
+
+        <p class="card__body">
+          That shift led me to technology. From an early age, computers fascinated me as systems—logic, structure,
+          cause and effect. Over time, that interest expanded beyond tools into how information, meaning,
+          and trust form in different contexts.
+        </p>
+
+        <p class="card__body">
+          I began to notice how communication subtly changes depending on situation and audience, why trust forms
+          in some circumstances and not others, and how people interpret intention under uncertainty. This wasn’t
+          about manipulation—it was about understanding how humans actually behave. That understanding later became
+          essential to how I think about art as communication, not just expression.
+        </p>
+
+        <p class="card__body">
+          Before returning to study, life took a practical direction. After school, I entered the building industry
+          and spent roughly twenty years working as a carpenter—an apprenticeship in quality, material awareness,
+          precision, and restraint.
+        </p>
+
+        <p class="card__body">
+          In 2019, my mother passed away. She had been creative herself—working with sculpture and later painting—
+          but like many people, art often took a back seat to responsibility. Her death marked a difficult chapter,
+          not only emotionally, but existentially.
+        </p>
+
+        <p class="card__body">
+          One of the hardest aspects was the loss of connection. I could no longer call her or share thoughts with her.
+          In that absence, I searched quietly for a way to feel connected again. Art became that bridge—not because
+          I believed I was good at it, but because it felt like returning to a language she once spoke.
+        </p>
+
+        <p class="card__body">
+          Early attempts were poor. But I continued deliberately, choosing subjects and techniques beyond my ability,
+          not to master them quickly, but to grow through discomfort. Over time, something unexpected happened:
+          people responded—not with flattery, but with genuine recognition. That restored self-belief and reinforced
+          the idea that ability is built through sustained effort and honest feedback.
+        </p>
+
+        <p class="card__body">
+          Digital work eventually felt inevitable. It brought together everything that had shaped me:
+          the discipline of craft, the structure of systems thinking, an understanding of perception and meaning,
+          and an emotional preference for restraint in a time where much AI-generated work can feel over-produced
+          or emotionally hollow.
+        </p>
+
+        <p class="card__body">
+          Working digitally allowed calm to become a design choice rather than an accident—complexity without noise,
+          precision without coldness, and abstraction without emptiness.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- WHAT THIS IS / ISN'T -->
+  <Section>
+    <div class="container">
+      <div class="section__heading">
+        <div class="section__eyebrow">What this work is—and isn’t</div>
+        <h2 class="section__title">Consistency between values, process, and outcome</h2>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__title">Not built for attention</div>
+          <p class="card__body">
+            This work is not about virality, shock, or mass appeal. It is built to feel grounded,
+            considered, and durable.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card__title">Restraint over saturation</div>
+          <p class="card__body">
+            Texture, imperfection, quiet authority, and intentional limits are used as a response
+            to visual overload.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card__title">Built for real rooms</div>
+          <p class="card__body">
+            Contrast, scale, and negative space are treated as interior design inputs,
+            not afterthoughts.
+          </p>
+        </div>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>

@@ -1,0 +1,76 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title = "Solara Meridian Studio",
+  description = "",
+} = Astro.props;
+
+// GitHub Pages project-site safe base (no trailing slash)
+const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /> 
+    <title>{title}</title>
+    <meta name="description" content={description || ""} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href={`${base}/styles/global.css`} />
+    <meta name="google-site-verification" content="R7O3CfxGVvxQmoYnaKRl21mB7TsX8jjZqZ-3WdfWl2w" />
+  </head>
+
+  <body class="landing-wrapper">
+    <!-- Minimal header -->
+    <header class="landing-header">
+      <a href={`${base}/`} class="logo">Solara Meridian Studio</a>
+    </header>
+
+    <main class="landing-main">
+      <slot />
+    </main>
+
+    <!-- Focused CTA footer -->
+    <footer class="landing-footer">
+      <p>© {new Date().getFullYear()} Solara Meridian Studio</p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .landing-wrapper {
+    background: var(--color-bg-main);
+    color: var(--color-text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landing-header {
+    padding: var(--space-3);
+    text-align: center;
+  }
+
+  .logo {
+    font-size: var(--font-size-lg);
+    text-decoration: none;
+    color: var(--color-text-main);
+  }
+
+  .landing-main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-4);
+  }
+
+  .landing-footer {
+    text-align: center;
+    padding: var(--space-4);
+    opacity: 0.6;
+    font-size: var(--font-size-xs);
+  }
+</style>

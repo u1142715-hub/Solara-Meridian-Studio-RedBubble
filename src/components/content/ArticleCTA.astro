@@ -1,0 +1,21 @@
+---
+/**
+ * ArticleCTA.astro
+ * Minimal, safe CTA component used by /articles/[slug].astro
+ * No inline styles. Text and href match your Master Spec intent.
+ */
+const {
+  title = "Viewing Contemporary Works",
+  text = "Explore the current body of work, editions, and featured pieces.",
+  buttonLabel = "View the work",
+  href = "/art",
+} = Astro.props;
+---
+
+<aside class="article-cta" aria-label="Article call to action">
+  <h2 class="article-cta__title">{title}</h2>
+  <p class="article-cta__text">{text}</p>
+  <p class="article-cta__actions">
+    <a class="article-cta__link" href={href}>{buttonLabel}</a>
+  </p>
+</aside>

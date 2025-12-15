@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArticleList from "../../components/content/ArticleList.astro";
+import { getCollection } from "astro:content";
+
+const allArticles = await getCollection("articles");
+const sorted = allArticles.sort((a, b) => b.data.publishedAt - a.data.publishedAt);
+const hasArticles = sorted.length > 0;
+---
+
+<BaseLayout title="Articles" description="Guides, insights, and resources.">
+  <section class="articles-header">
+    <h1>Articles</h1>
+    <p>Guides, insights, and resources across Art.</p>
+  </section>
+
+  {hasArticles ? (
+    <ArticleList articles={sorted} />
+  ) : (
+    <section class="articles-empty" aria-label="No articles yet">
+      <p class="articles-empty__title">No articles published yet.</p>
+      <p class="articles-empty__text">
+        The first guide is being prepared. For now, you can explore the current body of work.
+      </p>
+      <p class="articles-empty__action">
+        <a class="articles-empty__link" href="/art">View the work</a>
+      </p>
+    </section>
+  )}
+</BaseLayout>
+
+<style>
+  .articles-header {
+    padding: var(--space-4) 0;
+    text-align: center;
+  }
+  .articles-header h1 {
+    font-size: var(--font-size-3xl);
+  }
+
+  /* Empty-state (only appears when no articles exist) */
+  .articles-empty {
+    max-width: 72ch;
+    margin: var(--space-6) auto 0;
+    padding: var(--space-5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+  .articles-empty__title {
+    margin: 0 0 var(--space-2);
+    font-size: var(--font-size-lg);
+  }
+  .articles-empty__text {
+    margin: 0 0 var(--space-3);
+    opacity: 0.85;
+    line-height: 1.7;
+  }
+  .articles-empty__link {
+    text-decoration: none;
+  }
+</style>

@@ -1,0 +1,38 @@
+---
+const {
+  title = "Viewing Contemporary Works",
+  text = "Explore the current body of work, editions, and featured pieces.",
+  buttonLabel = "View the work",
+  href = "/art",
+} = Astro.props;
+---
+
+<aside class="cta" aria-label="Article call to action">
+  <h2 class="cta__title">{title}</h2>
+  <p class="cta__text">{text}</p>
+  <a class="cta__btn" href={href}>{buttonLabel}</a>
+
+  <style>
+    .cta {
+      margin-top: 2rem;
+      padding: 1.25rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.02);
+    }
+    .cta__title { margin: 0 0 0.5rem; font-size: 1.1rem; }
+    .cta__text { margin: 0 0 1rem; opacity: 0.85; line-height: 1.7; }
+    .cta__btn {
+      display: inline-block;
+      padding: 0.65rem 0.95rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.04);
+      text-decoration: none;
+    }
+    .cta__btn:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.28);
+    }
+  </style>
+</aside>

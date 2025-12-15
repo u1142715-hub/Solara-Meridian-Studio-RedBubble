@@ -1,0 +1,15 @@
+---
+const { artworks = [] } = Astro.props;
+---
+
+<section class="section">
+  <h2 class="section-title">Featured Collections</h2>
+  <div class="art-grid">
+    {artworks.map((item) => (
+      <article class="card">
+        <h3>{item.title}</h3>
+        {item.description && <p>{item.description}</p>}
+      </article>
+    ))}
+  </div>
+</section>

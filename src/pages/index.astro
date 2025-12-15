@@ -1,0 +1,203 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/ui/Section.astro";
+import ArticleList from "../components/content/ArticleList.astro";
+import ArtworkCarousel from "../components/content/ArtworkCarousel.astro";
+import { getCollection } from "astro:content";
+
+const base = import.meta.env.BASE_URL || "/";
+
+const SAATCHI_PROFILE_URL = "https://www.saatchiart.com/en-au/solara-meridian-studio/";
+
+// IMPORTANT: set this to your actual Redbubble store URL (keep it quiet + secondary).
+const REDBUBBLE_URL = "https://www.redbubble.com/";
+
+const articles = (await getCollection("articles"))
+  .sort((a, b) => (b.data.publishedAt as Date).getTime() - (a.data.publishedAt as Date).getTime())
+  .slice(0, 3);
+
+// Homepage featured works
+// Your files exist at: public/images/art/origin-forms/origin-forms-01.jpg etc.
+// On GitHub Pages project sites, use BASE_URL so it becomes /solara-meridian-studio/images/...
+const featuredArtworks = [
+  {
+    id: "origin-forms-01",
+    data: {
+      title: "Origin Forms I",
+      slug: "origin-forms-i",
+      thumbnail: `${base}images/art/origin-forms/origin-forms-01.jpg`,
+      saatchiUrl: SAATCHI_PROFILE_URL,
+      alt: "Origin Forms I — controlled recomposition of AI artefacts into a finished work",
+    },
+  },
+  {
+    id: "origin-forms-02",
+    data: {
+      title: "Origin Forms II",
+      slug: "origin-forms-ii",
+      thumbnail: `${base}images/art/origin-forms/origin-forms-02.jpg`,
+      saatchiUrl: SAATCHI_PROFILE_URL,
+      alt: "Origin Forms II — restrained, collectible composition built from AI artefacts",
+    },
+  },
+  {
+    id: "origin-forms-03",
+    data: {
+      title: "Origin Forms III",
+      slug: "origin-forms-iii",
+      thumbnail: `${base}images/art/origin-forms/origin-forms-03.jpg`,
+      saatchiUrl: SAATCHI_PROFILE_URL,
+      alt: "Origin Forms III — composed figure study; intentional recomposition, not correction",
+    },
+  },
+];
+---
+
+<BaseLayout
+  title="Solara Meridian Studio"
+  description="A controlled visual language built from AI artefacts—intentionally recomposed rather than corrected."
+>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div>
+        <div class="hero__kicker">Solara Meridian Studio</div>
+        <h1 class="hero__title">
+          A controlled visual language built from AI artefacts—intentionally recomposed rather than corrected.
+        </h1>
+        <p class="hero__subtitle">
+          A premium direction that reframes a commonly mocked failure mode into composed, collectible work—
+          designed to hold attention quietly, not demand it.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--block-mobile" href={`${base}art/`}>Explore the collection</a>
+          <a class="btn btn--ghost btn--block-mobile" href={`${base}articles/`}>Read studio notes</a>
+          <a class="btn btn--ghost btn--block-mobile" href={`${base}about/`}>About the studio</a>
+        </div>
+
+        <div class="hero__meta">
+          Purchases and fulfilment are handled securely through Saatchi Art.
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <div class="hero__media-inner">
+          <div class="card">
+            <div class="card__eyebrow">Current flagship series</div>
+            <div class="card__title">The Origin Forms</div>
+            <p class="card__body">
+              A first release built from selected artefacts—stabilised into finished works through restraint,
+              composition, and refusal of noise. Surface treatments may draw on mineral and fracture logic,
+              but the intent remains art-first.
+            </p>
+            <div class="mt-2">
+              <a class="btn btn--subtle btn--block" href={`${base}art/`}>View featured works</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY / BENEFITS -->
+  <Section variant="alt">
+    <div class="container">
+      <div class="section__heading">
+        <div class="section__eyebrow">Why collectors respond</div>
+        <h2 class="section__title">Scarcity through judgement, not output volume.</h2>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__title">Controlled recomposition</div>
+          <p class="card__body">
+            Artefacts are selected, stabilised, and composed into finished works. The goal is coherence, not novelty.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card__title">Restraint as a signature</div>
+          <p class="card__body">
+            Precision without coldness; complexity without noise. The work is designed to reveal itself over time.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card__title">Collector-ready presentation</div>
+          <p class="card__body">
+            Clear framing, consistent edition details, and a clean purchase path through Saatchi Art—without competing funnels.
+          </p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- FEATURED WORKS -->
+  <Section>
+    <div class="container">
+      <div class="section__heading">
+        <div class="section__eyebrow">Featured works</div>
+        <h2 class="section__title">A small selection from The Origin Forms</h2>
+      </div>
+
+      <ArtworkCarousel artworks={featuredArtworks} label="Featured works from The Origin Forms" />
+
+      <div class="mt-3 text-center">
+        <a class="btn btn--primary btn--block-mobile" href={`${base}art/`}>Explore the full presentation</a>
+        <a class="btn btn--ghost btn--block-mobile" href={`${base}provenance/`}>Provenance & authenticity</a>
+      </div>
+    </div>
+  </Section>
+
+  <!-- ROUTING / STORES (PRIMARY + SOFT OVERFLOW) -->
+  <Section variant="alt">
+    <div class="container">
+      <div class="cta">
+        <div class="cta__eyebrow">Collect</div>
+        <div class="cta__title">Explore availability and purchase securely through Saatchi Art.</div>
+        <p class="cta__body">
+          The art page is the canonical presentation. Saatchi Art handles secure checkout, edition enforcement, and delivery.
+        </p>
+
+        <div class="mt-2">
+          <a class="btn btn--primary btn--block-mobile" href={`${base}art/`}>Go to the art page</a>
+          <a
+            class="btn btn--ghost btn--block-mobile"
+            href={SAATCHI_PROFILE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Saatchi Art profile
+          </a>
+        </div>
+
+        <p class="cta__body" style="margin-top: 1rem; opacity: 0.85;">
+          Separately, the studio also maintains a print-on-demand shop on{" "}
+          <a href="https://www.redbubble.com/people/SamFrederiksen/shop" target="_blank" rel="noopener noreferrer">
+            Redbubble
+          </a>
+          {" "}featuring distinct designs created specifically for that format.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- ARTICLES (SUPPORTING DISCOVERY LAYER) -->
+  {articles.length > 0 && (
+    <Section>
+      <div class="container">
+        <div class="section__heading">
+          <div class="section__eyebrow">Studio notes</div>
+          <h2 class="section__title">Context that routes back to the work.</h2>
+        </div>
+
+        <ArticleList articles={articles} />
+
+        <div class="mt-3 text-center">
+          <a class="btn btn--ghost btn--block-mobile" href={`${base}articles/`}>View all articles</a>
+        </div>
+      </div>
+    </Section>
+  )}
+</BaseLayout>

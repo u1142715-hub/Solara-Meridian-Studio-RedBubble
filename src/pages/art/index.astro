@@ -1,0 +1,246 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import LandingLayout from "../../layouts/LandingLayout.astro";
+import ArtworkCarousel from "../../components/content/ArtworkCarousel.astro";
+import CTASection from "../../components/ui/CTASection.astro";
+import ScrollStorySection from "../../components/layout/ScrollStorySection.astro";
+
+const base = import.meta.env.BASE_URL || "/";
+
+const SAATCHI_PROFILE_URL = "https://www.saatchiart.com/en-au/solara-meridian-studio";
+
+const featuredArtworks = [
+  {
+    id: "origin-forms-01",
+    data: {
+      title: "Origin Forms I",
+      slug: "origin-forms-i",
+      // served from public/images/...
+      thumbnail: `${base}images/art/origin-forms/origin-forms-01.jpg`,
+      saatchiUrl: "https://www.saatchiart.com/en-au/art/Digital-First-Emergence/2900417/13413289/view",
+      alt: "Origin Forms I – controlled recomposition of AI artefacts into a finished, collectible work",
+    },
+  },
+  {
+    id: "origin-forms-02",
+    data: {
+      title: "Origin Forms II",
+      slug: "origin-forms-ii",
+      thumbnail: `${base}images/art/origin-forms/origin-forms-02.jpg`,
+      saatchiUrl: "https://www.saatchiart.com/en-au/art/Digital-Second-Emergence/2900417/13415099/view",
+      alt: "Origin Forms II – restrained, composed artwork built from intentionally selected AI artefacts",
+    },
+  },
+  {
+    id: "origin-forms-03",
+    data: {
+      title: "Origin Forms III",
+      slug: "origin-forms-iii",
+      thumbnail: `${base}images/art/origin-forms/origin-forms-03.jpg`,
+      saatchiUrl: "https://www.saatchiart.com/en-au/art/Digital-Third-Emergence-Origin-Collection/2900417/13415119/view",
+      alt: "Origin Forms III – composed figure study: intentional recomposition, not correction",
+    },
+  },
+];
+---
+
+<BaseLayout>
+  <LandingLayout
+    title="Solara Meridian Studio – The Origin Forms"
+    description="A controlled visual language built from AI artefacts—intentionally recomposed rather than corrected."
+  >
+    <!-- HERO -->
+    <section class="landing-hero">
+      <div class="landing-hero__copy">
+        <p class="landing-hero__kicker">Solara Meridian Studio</p>
+        <h1 class="landing-hero__title">
+          A controlled visual language built from AI artefacts—intentionally recomposed rather than corrected.
+        </h1>
+        <p class="landing-hero__text">
+          The Origin Forms reframes a commonly mocked failure mode into composed, collectible work—guided by restraint,
+          selection, and a preference for quiet authority over noise.
+        </p>
+        <a class="landing-hero__cta" href={SAATCHI_PROFILE_URL} target="_blank" rel="noopener noreferrer">
+          Explore availability on Saatchi Art
+        </a>
+
+        <p class="landing-hero__meta">
+          Payments and delivery are handled directly through Saatchi Art’s secure platform.
+        </p>
+      </div>
+
+      <div class="landing-hero__visual">
+        <img
+          src={`${base}images/hero-gallery-wall.jpg`}
+          alt="Solara Meridian Studio artwork styled in a modern interior setting"
+          loading="eager"
+        />
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="landing-section">
+      <h2 class="landing-section__title">Why collectors respond to this body of work</h2>
+      <div class="landing-benefit-grid">
+        <article class="landing-benefit">
+          <h3>Controlled recomposition</h3>
+          <p>
+            Artefacts are selected, stabilised, and composed into finished works. Scarcity comes from judgement,
+            not output volume.
+          </p>
+        </article>
+        <article class="landing-benefit">
+          <h3>Restraint as a signature</h3>
+          <p>
+            Precision without coldness; complexity without noise. The work is designed to reveal itself over time,
+            rather than compete for attention.
+          </p>
+        </article>
+        <article class="landing-benefit">
+          <h3>Composed for real rooms</h3>
+          <p>
+            Works are tuned to sit confidently in lived spaces and studios—surface treatments may draw on mineral and
+            fracture logic, but the intent remains art-first, not decorative.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SCROLL STORY -->
+    <ScrollStorySection
+      title="From artefact to finished work"
+      steps={[
+        {
+          heading: "Selection, not correction",
+          text:
+            "The process begins by identifying artefacts that already carry visual tension, ambiguity, or structure—elements often dismissed as errors rather than potential.",
+        },
+        {
+          heading: "Intentional recomposition",
+          text:
+            "Rather than polishing outputs into something generic, selected artefacts are stabilised and recomposed. Restraint and refusal shape the work as much as addition.",
+        },
+        {
+          heading: "Collector-ready resolution",
+          text:
+            "The final work is resolved as a complete composition. Surface treatments may reference stone, metal, or mineral palettes as tools—secondary to intent, not the identity of the work.",
+        },
+      ]}
+    />
+
+    <!-- FEATURED ARTWORKS -->
+    <section class="landing-section">
+      <div class="landing-panel">
+        <h2 class="landing-section__title">Featured works from The Origin Forms</h2>
+        <p class="landing-section__lead">
+          A curated selection from the first limited-edition series released by Solara Meridian Studio.
+        </p>
+
+        <ArtworkCarousel artworks={featuredArtworks} label="Featured works from The Origin Forms" />
+      </div>
+    </section>
+
+    <!-- COLLECTIONS OVERVIEW -->
+    <section class="landing-section">
+      <h2 class="landing-section__title">Current flagship collection</h2>
+      <p class="landing-section__lead">
+        The Origin Forms is the first limited-edition series released by Solara Meridian Studio.
+        Future collections will be added here as they are completed.
+      </p>
+      <ul class="landing-collection-list">
+        <li>The Origin Forms – flagship limited-edition series (Saatchi Art)</li>
+        <li>Additional limited collections – currently in development</li>
+      </ul>
+    </section>
+
+    <!-- SOCIAL PROOF / USE CASES -->
+    <section class="landing-section">
+      <h2 class="landing-section__title">Designed for people who curate their atmosphere</h2>
+      <p class="landing-section__lead">
+        These works suit collectors, founders, and creatives who want their environment to feel intentional rather than generic—
+        a composed visual language that holds its ground.
+      </p>
+      <div class="landing-benefit-grid">
+        <article class="landing-benefit">
+          <h3>Home interiors</h3>
+          <p>
+            Anchor living rooms, bedrooms, and entries with a single, confident focal piece or a tightly composed pair.
+          </p>
+        </article>
+        <article class="landing-benefit">
+          <h3>Studios & offices</h3>
+          <p>
+            Give workspaces a subtle, high-end backdrop that looks composed on video calls and in person.
+          </p>
+        </article>
+        <article class="landing-benefit">
+          <h3>Collectible sets</h3>
+          <p>
+            Build curated clusters drawn from a shared palette and structure, so a consistent visual language connects your space.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="landing-section">
+      <h2 class="landing-section__title">FAQ</h2>
+      <div class="landing-faq-list">
+        <details>
+          <summary>Where do I purchase the artwork?</summary>
+          <p>
+            All purchasing, payments, and shipping for originals and limited editions are handled through Saatchi Art
+            on the Solara Meridian Studio profile.
+          </p>
+        </details>
+
+        <details>
+          <summary>Do you offer print-on-demand options?</summary>
+          <p>
+            Yes. Separately, the studio also maintains a print-on-demand shop on{" "}
+            <a
+              href="https://www.redbubble.com/people/SamFrederiksen/shop"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Redbubble
+            </a>{" "}
+            featuring distinct designs created specifically for that format.
+          </p>
+        </details>
+
+        <details>
+          <summary>Will this work with neutral interiors?</summary>
+          <p>
+            Yes. Many works are tuned to sit calmly within neutral spaces. Surface tones may stay quiet, with the option
+            for deeper accents where needed—without overwhelming the room.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I commission a specific palette?</summary>
+          <p>
+            Commissions may be available depending on the studio schedule. If open, we’ll refine a palette and scale together
+            and then translate that into a cohesive composition.
+          </p>
+        </details>
+
+        <details>
+          <summary>How often are new works released?</summary>
+          <p>
+            New pieces and collections are developed intentionally rather than on a fixed schedule, so the studio’s visual
+            language evolves without overwhelming the core series.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <CTASection
+      title="Collect Solara Meridian Studio originals and limited editions"
+      text="Explore the full catalogue, see current availability, and purchase securely through Saatchi Art."
+      buttonLabel="Visit Saatchi Art profile"
+      href={SAATCHI_PROFILE_URL}
+    />
+  </LandingLayout>
+</BaseLayout>

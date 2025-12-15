@@ -1,0 +1,45 @@
+---
+const { title, steps } = Astro.props;
+---
+
+<section class="scroll-story">
+  <div class="scroll-story-inner">
+    {title && <h2>{title}</h2>}
+    {steps && steps.length && (
+      <ol class="scroll-story-list">
+        {steps.map((step) => (
+          <li class="scroll-story-item">
+            {step.heading && <h3>{step.heading}</h3>}
+            {step.text && <p>{step.text}</p>}
+          </li>
+        ))}
+      </ol>
+    )}
+    <slot />
+  </div>
+</section>
+
+<style>
+  .scroll-story {
+    padding: var(--space-4) 0;
+  }
+
+  .scroll-story-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .scroll-story-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .scroll-story-item {
+    padding: var(--space-3);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.02);
+  }
+</style>

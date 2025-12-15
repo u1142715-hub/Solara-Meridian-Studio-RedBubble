@@ -1,0 +1,199 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArticleCTA from "../../components/content/ArticleCTA.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("articles");
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const topicCluster = entry.data.topicCluster;
+
+const allArticles = await getCollection("articles");
+const related =
+  topicCluster
+    ? allArticles
+        .filter((a) => a.data.topicCluster === topicCluster && a.slug !== entry.slug)
+        .slice(0, 3)
+    : [];
+---
+
+<BaseLayout
+  title={entry.data.seoTitle || entry.data.title}
+  description={entry.data.seoDescription || entry.data.excerpt || entry.data.description}
+>
+  <article class="article-shell">
+    <header class="article-header">
+      {topicCluster && <p class="publication-label">Article · {topicCluster}</p>}
+
+      <h1 class="article-title">{entry.data.title}</h1>
+
+      {entry.data.description && (
+        <p class="article-dek">{entry.data.description}</p>
+      )}
+
+      {entry.data.publishedAt && (
+        <p class="article-meta">
+          Published {entry.data.publishedAt.toLocaleDateString()}
+        </p>
+      )}
+
+      {entry.data.heroImage && (
+        <figure class="hero">
+          <img src={entry.data.heroImage} alt={entry.data.title} />
+        </figure>
+      )}
+    </header>
+
+    <div class="article-prose">
+      <Content />
+    </div>
+
+    <ArticleCTA target={entry.data.targetLandingPage} />
+
+    {related.length > 0 && (
+      <section class="related">
+        <h2>Further Reading</h2>
+        <ul>
+          {related.map((r) => (
+            <li>
+              <a href={`/articles/${r.slug}`}>{r.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </article>
+</BaseLayout>
+
+<style>
+  /* ===== Outer shell ===== */
+  .article-shell {
+    max-width: 76ch;
+    margin: 0 auto;
+    padding: clamp(2rem, 4vw, 3rem) clamp(1.25rem, 3vw, 2.25rem);
+    background: rgba(255,255,255,0.015);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px;
+  }
+
+  /* ===== Header ===== */
+  .article-header {
+    margin-bottom: 3rem;
+  }
+
+  .publication-label {
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.7rem;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+  }
+
+  .article-title {
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    margin-bottom: 1rem;
+  }
+
+  .article-dek {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    max-width: 68ch;
+    opacity: 0.9;
+    margin-bottom: 1.2rem;
+  }
+
+  .article-meta {
+    font-size: 0.9rem;
+    opacity: 0.6;
+  }
+
+  .hero {
+    margin-top: 2rem;
+  }
+
+  .hero img {
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* ===== Editorial prose ===== */
+  .article-prose {
+    font-size: 1.06rem;
+    line-height: 1.85;
+    opacity: 0.92;
+  }
+
+  .article-prose :global(p) {
+    margin: 0 0 1.25rem;
+  }
+
+  .article-prose :global(p:first-of-type) {
+    font-size: 1.18rem;
+    opacity: 0.98;
+  }
+
+  /* Section breaks = authority */
+  .article-prose :global(h2) {
+    margin: 3.5rem 0 1rem;
+    padding-top: 2rem;
+    font-size: 1.6rem;
+    letter-spacing: -0.01em;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .article-prose :global(ul) {
+    margin: 1.25rem 0 1.5rem;
+    padding-left: 1.1rem;
+  }
+
+  .article-prose :global(li) {
+    margin: 0.65rem 0;
+    line-height: 1.7;
+    opacity: 0.9;
+  }
+
+  .article-prose :global(li::marker) {
+    opacity: 0.3;
+  }
+
+  .article-prose :global(a) {
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+  }
+
+  .article-prose :global(a:hover) {
+    border-bottom-color: rgba(255,255,255,0.55);
+  }
+
+  /* ===== Related ===== */
+  .related {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .related h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .related ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .related li {
+    margin-bottom: 0.6rem;
+  }
+</style>
