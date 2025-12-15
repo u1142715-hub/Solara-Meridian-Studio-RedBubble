@@ -1,6 +1,6 @@
 ---
 const {
-  title = "Solara Meridian Studio",
+  title = "Solara Meridian Studio @ RedBubble",
   description = "",
 } = Astro.props;
 
@@ -26,6 +26,7 @@ const isActive = (href) => {
 
 // Saatchi profile (single external CTA; homepage remains art-first)
 const SAATCHI_PROFILE_URL = "https://www.saatchiart.com/en-au/solara-meridian-studio";
+const REDBUBBLE_PROFILE_URL = "https://www.redbubble.com/people/SamFrederiksen/shop";
 ---
 
 <html lang="en">
@@ -44,15 +45,15 @@ const SAATCHI_PROFILE_URL = "https://www.saatchiart.com/en-au/solara-meridian-st
     <div class="site-shell">
       <header class="site-header">
         <div class="container site-header__inner">
-          <a class="site-brand" href={`${base}/`}>SOLARA MERIDIAN STUDIO</a>
+          <a class="site-brand" href={`${base}/`}>SOLARA MERIDIAN STUDIO @ RedBubble</a>
 
           <nav class="nav">
             <a class={isActive("/art/")} href={`${base}/art/`}>Art</a>
             <a class={isActive("/articles/")} href={`${base}/articles/`}>Articles</a>
             <a class={isActive("/about/")} href={`${base}/about/`}>About</a>
 
-            <a class="nav__cta" href={SAATCHI_PROFILE_URL} target="_blank" rel="noopener noreferrer">
-              SAATCHI PROFILE
+            <a class="nav__cta" href={REDBUBBLE_PROFILE_URL} target="_blank" rel="noopener noreferrer">
+              REDBUBBLE PROFILE
             </a>
           </nav>
         </div>
