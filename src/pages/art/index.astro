@@ -8,6 +8,7 @@ import ScrollStorySection from "../../components/layout/ScrollStorySection.astro
 const base = import.meta.env.BASE_URL || "/";
 
 const SAATCHI_PROFILE_URL = "https://www.saatchiart.com/en-au/solara-meridian-studio";
+const REDBUBBLE_PROFILE_URL = "https://www.redbubble.com/people/SamFrederiksen/shop"
 
 const featuredArtworks = [
   {
@@ -16,7 +17,7 @@ const featuredArtworks = [
       title: "Origin Forms I",
       slug: "origin-forms-i",
       // served from public/images/...
-      thumbnail: `${base}images/art/origin-forms/origin-forms-01.jpg`,
+      thumbnail: `${base}images/art/christmas/christmas1.jpg`,
       saatchiUrl: "https://www.saatchiart.com/en-au/art/Digital-First-Emergence/2900417/13413289/view",
       alt: "Origin Forms I – controlled recomposition of AI artefacts into a finished, collectible work",
     },
@@ -60,7 +61,7 @@ const featuredArtworks = [
           The Origin Forms reframes a commonly mocked failure mode into composed, collectible work—guided by restraint,
           selection, and a preference for quiet authority over noise.
         </p>
-        <a class="landing-hero__cta" href={SAATCHI_PROFILE_URL} target="_blank" rel="noopener noreferrer">
+        <a class="landing-hero__cta" href={REDBUBBLE_PROFILE_URL} target="_blank" rel="noopener noreferrer">
           Explore availability on Saatchi Art
         </a>
 
@@ -71,7 +72,7 @@ const featuredArtworks = [
 
       <div class="landing-hero__visual">
         <img
-          src={`${base}images/hero-gallery-wall.jpg`}
+          src={`${base}images/origin-forms-01.jpg`}
           alt="Solara Meridian Studio artwork styled in a modern interior setting"
           loading="eager"
         />
