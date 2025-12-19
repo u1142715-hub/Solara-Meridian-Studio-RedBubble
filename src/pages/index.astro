@@ -21,33 +21,33 @@ const articles = (await getCollection("articles"))
 // On GitHub Pages project sites, use BASE_URL so it becomes /solara-meridian-studio/images/...
 const featuredArtworks = [
   {
-    id: "origin-forms-01",
+    id: "modern-heritage-01",
     data: {
-      title: "Origin Forms I",
-      slug: "origin-forms-i",
+      title: "Modern Heritage I",
+      slug: "modern-heritage-i",
       thumbnail: `${base}images/art/christmas/christmas1.jpg`,
       saatchiUrl: REDBUBBLE_PROFILE_URL,
-      alt: "Origin Forms I — controlled recomposition of AI artefacts into a finished work",
+      alt: "Modern Heritage I — modern symbolic geometry with stone texture and quiet luxury tone",
     },
   },
   {
-    id: "origin-forms-02",
+    id: "modern-heritage-02",
     data: {
-      title: "Origin Forms II",
-      slug: "origin-forms-ii",
+      title: "Modern Heritage II",
+      slug: "modern-heritage-ii",
       thumbnail: `${base}images/art/christmas/christmas2.jpg`,
       saatchiUrl: REDBUBBLE_PROFILE_URL,
-      alt: "Origin Forms II — restrained, collectible composition built from AI artefacts",
+      alt: "Modern Heritage II — clean emblem composition, marble tones, and timeless balance",
     },
   },
   {
-    id: "origin-forms-03",
+    id: "modern-heritage-03",
     data: {
-      title: "Origin Forms III",
-      slug: "origin-forms-iii",
+      title: "Modern Heritage III",
+      slug: "modern-heritage-iii",
       thumbnail: `${base}images/art/christmas/christmas3.jpg`,
       saatchiUrl: REDBUBBLE_PROFILE_URL,
-      alt: "Origin Forms III — composed figure study; intentional recomposition, not correction",
+      alt: "Modern Heritage III — circular focal symbol with calm contrast and gold-vein accents",
     },
   },
 ];
@@ -55,7 +55,7 @@ const featuredArtworks = [
 
 <BaseLayout
   title="Solara Meridian Studio"
-  description="A controlled visual language built from AI artefacts—intentionally recomposed rather than corrected."
+  description="A curated Redbubble studio focused on modern symbolic designs, stone textures, and timeless visual balance."
 >
   <!-- HERO -->
   <section class="hero">
@@ -63,12 +63,12 @@ const featuredArtworks = [
       <div>
         <div class="hero__kicker">Solara Meridian Studio</div>
         <h1 class="hero__title">
-          Solara Meridian Studio is a curated Redbubble shop featuring 100 original designs—quiet-luxury marble inlays, dark gold-vein marbles, jewel-tone gemstones, and soft minimal stone palettes. 
-          Each collection is built for calm interiors and thoughtful gifting. 
-          Primary destination: the Redbubble storefront.
+          Solara Meridian Studio is a curated Redbubble shop featuring modern symbolic designs built around clean geometry,
+          stone textures, and timeless visual balance. Each collection is designed for everyday products, thoughtful gifting,
+          and long-term relevance.
         </h1>
         <p class="hero__subtitle">
-         Premium-feel art for everyday spaces—designed to read as calm, textured, and intentional, not mass-generated.
+          Calm, considered designs that feel intentional on walls, apparel, and daily-use products—never loud, never disposable.
         </p>
 
         <div class="hero__actions">
@@ -78,17 +78,18 @@ const featuredArtworks = [
         </div>
 
         <div class="hero__meta">
-          Purchases and fulfilment are handled securely through RedBubble.
+          Secure checkout, production, and global fulfilment are handled directly through Redbubble.
         </div>
       </div>
 
       <div class="hero__media">
         <div class="hero__media-inner">
           <div class="card">
-            <div class="card__eyebrow">Current flagship collection</div>
-            <div class="card__title">Cosy Christmas Village Collection</div>
+            <div class="card__eyebrow">Featured evergreen collection</div>
+            <div class="card__title">Modern Heritage</div>
             <p class="card__body">
-             A collection of winter village scenes featuring snow-covered cottages, warm lights and festive holiday details. Each design uses soft colour, gentle brushwork and classic Christmas themes.
+              A permanent collection of modern symbolic designs focused on clean geometry, marble and stone textures,
+              and quiet visual strength. Built to remain relevant year-round across everyday products and interior spaces.
             </p>
             <div class="mt-2">
               <a class="btn btn--subtle btn--block" href={`${base}art/`}>View featured works</a>
@@ -103,29 +104,29 @@ const featuredArtworks = [
   <Section variant="alt">
     <div class="container">
       <div class="section__heading">
-        <div class="section__eyebrow">Why collectors respond</div>
-        <h2 class="section__title">Scarcity through judgement, not output volume.</h2>
+        <div class="section__eyebrow">Why these designs resonate</div>
+        <h2 class="section__title">Consistency, restraint, and long-term relevance.</h2>
       </div>
 
       <div class="grid grid--3">
         <div class="card">
-          <div class="card__title">Controlled recomposition</div>
+          <div class="card__title">Clear visual language</div>
           <p class="card__body">
-            Artefacts are selected, stabilised, and composed into finished works. The goal is coherence, not novelty.
+            Each design follows a consistent symbolic and material language, so collections feel curated, not random.
           </p>
         </div>
 
         <div class="card">
-          <div class="card__title">Restraint as a signature</div>
+          <div class="card__title">Designed for everyday use</div>
           <p class="card__body">
-            Precision without coldness; complexity without noise. The work is designed to reveal itself over time.
+            Built to sit comfortably on walls, clothing, and daily-use items without visual fatigue—calm at a glance, rich up close.
           </p>
         </div>
 
         <div class="card">
-          <div class="card__title">Collector-ready presentation</div>
+          <div class="card__title">Simple, trusted purchase path</div>
           <p class="card__body">
-            Clear framing, consistent edition details, and a clean purchase path through Saatchi Art—without competing funnels.
+            Clear presentation and straightforward purchasing through Redbubble—no competing routes, no confusion.
           </p>
         </div>
       </div>
@@ -137,14 +138,14 @@ const featuredArtworks = [
     <div class="container">
       <div class="section__heading">
         <div class="section__eyebrow">Featured works</div>
-        <h2 class="section__title">A small selection from the Cosy Christmas Village Collection</h2>
+        <h2 class="section__title">A selection from the Modern Heritage collection</h2>
       </div>
 
-      <ArtworkCarousel artworks={featuredArtworks} label="Featured works from The Cosy Christmas Village Collection" />
+      <ArtworkCarousel artworks={featuredArtworks} label="Featured works from Modern Heritage" />
 
       <div class="mt-3 text-center">
-        <a class="btn btn--primary btn--block-mobile" href={`${base}art/`}>Explore the full presentation</a>
-        <a class="btn btn--ghost btn--block-mobile" href={`${base}provenance/`}>Provenance & authenticity</a>
+        <a class="btn btn--primary btn--block-mobile" href={`${base}art/`}>Explore the full collection</a>
+        <a class="btn btn--ghost btn--block-mobile" href={`${base}articles/`}>Read how collections are curated</a>
       </div>
     </div>
   </Section>
@@ -154,9 +155,9 @@ const featuredArtworks = [
     <div class="container">
       <div class="cta">
         <div class="cta__eyebrow">Collect</div>
-        <div class="cta__title">Explore availability and purchase securely through RedBubble.</div>
+        <div class="cta__title">Explore designs and purchase securely through Redbubble.</div>
         <p class="cta__body">
-          The art page is the canonical presentation. RedBubble handles secure checkout, and delivery.
+          The art page presents all collections clearly. Redbubble manages secure checkout, production, and delivery worldwide.
         </p>
 
         <div class="mt-2">
@@ -167,16 +168,16 @@ const featuredArtworks = [
             target="_blank"
             rel="noopener noreferrer"
           >
-           Open the Redbubble Shop
+            Open the Redbubble Shop
           </a>
         </div>
 
-        <p class="cta__body" style="margin-top: 1rem; opacity: 0.85;">
-          Separately, the studio also maintains a Gallary Grade Collectors Shop on{" "}
+        <p class="cta__body" style="margin-top: 1rem; opacity: 0.75;">
+          The studio also maintains a separate gallery-grade collection on{" "}
           <a href="https://www.saatchiart.com/en-au/solara-meridian-studio" target="_blank" rel="noopener noreferrer">
             Saatchi Art
           </a>
-          {" "}featuring distinct designs created specifically for that format.
+          , featuring distinct works created specifically for that context.
         </p>
       </div>
     </div>
@@ -188,7 +189,7 @@ const featuredArtworks = [
       <div class="container">
         <div class="section__heading">
           <div class="section__eyebrow">Studio notes</div>
-          <h2 class="section__title">Context that routes back to the work.</h2>
+          <h2 class="section__title">Notes on collections, materials, and intent.</h2>
         </div>
 
         <ArticleList articles={articles} />
