@@ -3,7 +3,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ArticleCTA from "../../components/content/ArticleCTA.astro";
 import { getCollection } from "astro:content";
 
+// GitHub Pages project-site safe base
 const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, "") + "/";
+
+// Helper so we always emit base-aware internal links with trailing slash
+const internal = (path) => {
+  const p = (path || "").startsWith("/") ? path.slice(1) : path;
+  const withSlash = p.endsWith("/") ? p : `${p}/`;
+  return `${base}${withSlash}`;
+};
 
 export async function getStaticPaths() {
   const entries = await getCollection("articles");
@@ -26,18 +34,17 @@ const related =
         .slice(0, 3)
     : [];
 
-// helper so we always emit base-aware internal links with trailing slash
-const internal = (path) => {
-  const p = (path || "").startsWith("/") ? path.slice(1) : path;
-  // ensure trailing slash because trailingSlash is always
-  const withSlash = p.endsWith("/") ? p : `${p}/`;
-  return `${base}${withSlash}`;
-};
+// Description fallback chain (stable for SEO + cards)
+const metaDescription =
+  entry.data.seoDescription ||
+  entry.data.description ||
+  entry.data.excerpt ||
+  "";
 ---
 
 <BaseLayout
   title={entry.data.seoTitle || entry.data.title}
-  description={entry.data.seoDescription || entry.data.excerpt || entry.data.description}
+  description={metaDescription}
 >
   <article class="article-shell">
     <header class="article-header">
@@ -66,8 +73,8 @@ const internal = (path) => {
       <Content />
     </div>
 
-    {/* ArticleCTA expects href (not target). Keep targetLandingPage in frontmatter. */}
-    <ArticleCTA href={entry.data.targetLandingPage || "/art"} />
+    {/* Always pass a base-correct internal href */}
+    <ArticleCTA href={internal(entry.data.targetLandingPage || "art")} />
 
     {related.length > 0 && (
       <section class="related">
