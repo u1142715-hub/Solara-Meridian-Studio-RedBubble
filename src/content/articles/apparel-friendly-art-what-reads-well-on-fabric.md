@@ -62,4 +62,3 @@ Symbolic geometry avoids these issues.
 ## Where to start
 
 For modern symbolic designs built to translate cleanly onto apparel:
-[View Modern Heritage](/art/).

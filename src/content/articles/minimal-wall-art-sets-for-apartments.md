@@ -55,4 +55,3 @@ Restrained symbolic designs avoid these issues.
 ## Where to start
 
 For minimal symbolic wall art sets designed for flexible living spaces:
-[View Modern Heritage](/art/).

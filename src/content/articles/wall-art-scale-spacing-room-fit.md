@@ -47,4 +47,3 @@ Calm interiors rely on predictable spacing, not novelty.
 ## Where to start
 
 For room-safe designs built for everyday products and long-term relevance:
-[View Modern Heritage](/art/).

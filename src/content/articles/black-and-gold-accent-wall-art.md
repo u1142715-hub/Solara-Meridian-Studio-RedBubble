@@ -51,4 +51,3 @@ Structure should lead; colour should support.
 ## Where to start
 
 For modern symbolic designs that keep contrast refined across everyday products:
-[View Modern Heritage](/art/).

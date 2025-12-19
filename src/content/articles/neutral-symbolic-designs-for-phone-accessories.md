@@ -53,4 +53,3 @@ Centered symbolic forms maintain clarity.
 ## Where to start
 
 For neutral symbolic designs built to convert on phone accessories and small tech:
-[View Modern Heritage](/art/).

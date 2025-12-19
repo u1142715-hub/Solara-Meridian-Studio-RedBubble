@@ -61,4 +61,3 @@ Designs that convert well across Redbubble’s volume categories typically:
 When in doubt, choose a curated lane built for everyday products and long-term relevance.
 
 Start with the flagship collection:  
-[View Modern Heritage](/art/).

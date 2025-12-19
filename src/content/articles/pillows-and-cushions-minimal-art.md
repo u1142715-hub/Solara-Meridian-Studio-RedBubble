@@ -56,4 +56,3 @@ Coordination logic:
 ## Where to start
 
 For pillows and cushions designed around calm symbolic structure:
-[View Modern Heritage](/art/).

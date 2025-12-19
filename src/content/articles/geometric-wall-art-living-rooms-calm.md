@@ -53,4 +53,3 @@ Simple structure lasts longer and feels more premium.
 ## Where to start
 
 For geometric symbolic designs built for real-room fit and everyday products:
-[View Modern Heritage](/art/).

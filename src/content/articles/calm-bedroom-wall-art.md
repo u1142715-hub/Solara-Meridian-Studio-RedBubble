@@ -47,4 +47,3 @@ Room-fit guidance:
 ## Where to start
 
 For calm, room-safe symbolic designs built for everyday products:
-[View Modern Heritage](/art/).

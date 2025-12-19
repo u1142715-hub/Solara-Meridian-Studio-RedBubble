@@ -55,4 +55,3 @@ This helps buyers feel good about adding an item to their cart quickly.
 ## Where to start
 
 For calm symbolic designs built to convert on impulse without feeling disposable:
-[View Modern Heritage](/art/).
