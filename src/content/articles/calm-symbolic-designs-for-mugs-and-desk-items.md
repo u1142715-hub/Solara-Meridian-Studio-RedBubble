@@ -56,6 +56,3 @@ Designs struggle when they:
 
 Symbolic structure avoids these problems.
 
-## Where to start
-
-For calm symbolic designs built to live comfortably on everyday items:

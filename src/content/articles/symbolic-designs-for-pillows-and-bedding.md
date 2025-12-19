@@ -56,6 +56,3 @@ Designs struggle when they:
 
 Symbolic restraint avoids these issues.
 
-## Where to start
-
-For symbolic designs built to live comfortably on pillows, bedding, and soft furnishings:

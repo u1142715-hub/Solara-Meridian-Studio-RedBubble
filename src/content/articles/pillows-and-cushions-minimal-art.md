@@ -53,6 +53,3 @@ Shared tone and geometry allow variety without visual conflict.
 Coordination logic:
 [Matching accessories without looking overstyled](../matching-accessories-without-overstyled/).
 
-## Where to start
-
-For pillows and cushions designed around calm symbolic structure:

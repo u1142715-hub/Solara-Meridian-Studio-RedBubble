@@ -59,6 +59,3 @@ Designs struggle when they:
 
 Restrained symbolic geometry avoids these issues.
 
-## Where to start
-
-For tote-bag-friendly designs built around neutral geometric structure:

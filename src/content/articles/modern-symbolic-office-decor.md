@@ -41,6 +41,3 @@ Restrained geometric structure outperforms complex patterning over time.
 Related style lane:
 [Neo-Deco geometry for modern interiors (2026–2028)](../neo-deco-geometry-modern-interiors-2026-2028/).
 
-## Where to start
-
-For structured, modern symbolic designs built for everyday products and long-term relevance:

@@ -63,6 +63,3 @@ Designs struggle when they:
 
 Symbolic structure avoids these issues.
 
-## Where to start
-
-For symbolic designs built to translate cleanly onto carry items:

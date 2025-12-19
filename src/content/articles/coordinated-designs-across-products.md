@@ -58,6 +58,3 @@ Coordination struggles when designs:
 
 Restrained systems avoid these issues.
 
-## Where to start
-
-For coordinated symbolic designs built to work together across products:

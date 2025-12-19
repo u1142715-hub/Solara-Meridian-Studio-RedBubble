@@ -71,6 +71,3 @@ Designs tend to struggle when they:
 
 Symbolic structure avoids these failure points.
 
-## Where to start
-
-For modern symbolic designs built to scale cleanly across products:

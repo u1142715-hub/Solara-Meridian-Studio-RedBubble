@@ -45,6 +45,3 @@ Avoid squeezing pieces between doors, windows, or shelves.
 Room-fit basics:
 [Wall art scale, spacing, and room fit](../wall-art-scale-spacing-room-fit/).
 
-## Where to start
-
-For modern symbolic designs built for everyday products and long-term relevance:

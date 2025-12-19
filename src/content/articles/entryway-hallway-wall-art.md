@@ -38,6 +38,3 @@ In narrow spaces, recognition wins.
 Broader context:
 [Modern symbolic decor trends 2026–2028](../modern-symbolic-decor-trends-2026-2028/).
 
-## Where to start
-
-For modern symbolic designs that stay readable and room-safe:

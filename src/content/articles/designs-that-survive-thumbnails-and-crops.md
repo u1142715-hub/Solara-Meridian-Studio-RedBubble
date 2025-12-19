@@ -56,6 +56,3 @@ When a design reads clearly at first glance:
 
 This benefits lower-cost products where speed matters.
 
-## Where to start
-
-For symbolic designs built to survive thumbnails, crops, and previews:

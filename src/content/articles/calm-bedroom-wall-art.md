@@ -44,6 +44,3 @@ Allow breathing room and avoid direct competition with lighting fixtures or shel
 Room-fit guidance:
 [Wall art scale, spacing, and room fit](../wall-art-scale-spacing-room-fit/).
 
-## Where to start
-
-For calm, room-safe symbolic designs built for everyday products:

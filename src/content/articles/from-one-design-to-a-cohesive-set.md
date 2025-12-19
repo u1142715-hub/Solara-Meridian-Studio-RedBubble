@@ -52,6 +52,3 @@ Cohesive sets work especially well across:
 Scaling logic:
 [Designs that survive thumbnails and crops](../designs-that-survive-thumbnails-and-crops/).
 
-## Where to start
-
-For a cohesive symbolic collection designed to work together across products:

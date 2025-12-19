@@ -47,6 +47,3 @@ Strong neutral designs stay readable at both room distance and small sizes.
 Room-fit guidance:
 [Wall art scale, spacing, and room fit](../wall-art-scale-spacing-room-fit/).
 
-## Where to start
-
-For calm, room-safe neutral designs built for everyday products:

@@ -61,6 +61,3 @@ Designs struggle when they:
 
 Symbolic structure avoids these failure points.
 
-## Where to start
-
-For clean symbolic designs built to work across phone cases, stickers, and small tech products:

@@ -53,6 +53,3 @@ Clean geometry performs consistently on:
 - desk items
 - apparel
 
-## Where to start
-
-For restrained geometric designs built to remain relevant across products:
