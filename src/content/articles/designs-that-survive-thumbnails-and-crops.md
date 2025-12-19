@@ -59,4 +59,4 @@ This benefits lower-cost products where speed matters.
 ## Where to start
 
 For symbolic designs built to survive thumbnails, crops, and previews:
-[View Modern Heritage](../art/).
+[View Modern Heritage](/art/).

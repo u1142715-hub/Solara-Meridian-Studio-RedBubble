@@ -59,4 +59,4 @@ Symbolic structure avoids these problems.
 ## Where to start
 
 For calm symbolic designs built to live comfortably on everyday items:
-[View Modern Heritage](../art/).
+[View Modern Heritage](/art/).

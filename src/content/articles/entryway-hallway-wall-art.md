@@ -41,4 +41,4 @@ Broader context:
 ## Where to start
 
 For modern symbolic designs that stay readable and room-safe:
-[View Modern Heritage](../art/).
+[View Modern Heritage](/art/).

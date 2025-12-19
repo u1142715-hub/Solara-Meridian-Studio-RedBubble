@@ -60,4 +60,4 @@ Clarity at small sizes matters as much as room presence.
 ## Where to start
 
 For calm, textured designs built for everyday products and long-term relevance:
-[View Modern Heritage](../art/).
+[View Modern Heritage](/art/).

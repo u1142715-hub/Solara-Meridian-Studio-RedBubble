@@ -74,4 +74,4 @@ Symbolic structure avoids these failure points.
 ## Where to start
 
 For modern symbolic designs built to scale cleanly across products:
-[View Modern Heritage](../art/).
+[View Modern Heritage](/art/).

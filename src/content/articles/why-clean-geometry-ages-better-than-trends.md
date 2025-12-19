@@ -56,4 +56,4 @@ Clean geometry performs consistently on:
 ## Where to start
 
 For restrained geometric designs built to remain relevant across products:
-[View Modern Heritage](../art/).
+[View Modern Heritage](/art/).

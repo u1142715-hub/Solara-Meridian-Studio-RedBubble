@@ -55,4 +55,4 @@ Scaling logic:
 ## Where to start
 
 For a cohesive symbolic collection designed to work together across products:
-[View Modern Heritage](../art/).
+[View Modern Heritage](/art/).

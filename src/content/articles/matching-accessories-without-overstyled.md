@@ -58,4 +58,4 @@ Symbolic consistency avoids these issues.
 ## Where to start
 
 For symbolic designs that coordinate naturally across accessories:
-[View Modern Heritage](../art/).
+[View Modern Heritage](/art/).

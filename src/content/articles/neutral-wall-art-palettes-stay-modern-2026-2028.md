@@ -50,4 +50,4 @@ Room-fit guidance:
 ## Where to start
 
 For calm, room-safe neutral designs built for everyday products:
-[View Modern Heritage](../art/).
+[View Modern Heritage](/art/).
