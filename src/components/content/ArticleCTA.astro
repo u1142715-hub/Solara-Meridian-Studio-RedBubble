@@ -2,20 +2,36 @@
 /**
  * ArticleCTA.astro
  * Minimal, safe CTA component used by /articles/[slug].astro
- * No inline styles. Text and href match your Master Spec intent.
+ * GitHub Pages project sites require BASE_URL prefix (e.g. /resethaven/).
  */
+const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
+
 const {
   title = "Viewing Contemporary Works",
   text = "Explore the current body of work, editions, and featured pieces.",
   buttonLabel = "View the work",
   href = "/art",
 } = Astro.props;
+
+// Normalize href:
+// - If it's already absolute (https://...), leave it alone.
+// - If it's root-relative (/art), prefix BASE_URL for project sites.
+// - If it's relative (art), make it root-relative first, then prefix.
+const isAbsolute = typeof href === "string" && /^https?:\/\//i.test(href);
+
+let resolvedHref = href;
+
+if (!isAbsolute) {
+  const h = typeof href === "string" ? href.trim() : "/art";
+  const rootish = h.startsWith("/") ? h : `/${h}`;
+  resolvedHref = `${base}${rootish}`;
+}
 ---
 
 <aside class="article-cta" aria-label="Article call to action">
   <h2 class="article-cta__title">{title}</h2>
   <p class="article-cta__text">{text}</p>
   <p class="article-cta__actions">
-    <a class="article-cta__link" href={href}>{buttonLabel}</a>
+    <a class="article-cta__link" href={resolvedHref}>{buttonLabel}</a>
   </p>
 </aside>
