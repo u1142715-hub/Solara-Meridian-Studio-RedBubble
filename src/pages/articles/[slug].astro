@@ -3,6 +3,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ArticleCTA from "../../components/content/ArticleCTA.astro";
 import { getCollection } from "astro:content";
 
+const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, "") + "/";
+
 export async function getStaticPaths() {
   const entries = await getCollection("articles");
   return entries.map((entry) => ({
@@ -23,6 +25,14 @@ const related =
         .filter((a) => a.data.topicCluster === topicCluster && a.slug !== entry.slug)
         .slice(0, 3)
     : [];
+
+// helper so we always emit base-aware internal links with trailing slash
+const internal = (path) => {
+  const p = (path || "").startsWith("/") ? path.slice(1) : path;
+  // ensure trailing slash because trailingSlash is always
+  const withSlash = p.endsWith("/") ? p : `${p}/`;
+  return `${base}${withSlash}`;
+};
 ---
 
 <BaseLayout
@@ -56,7 +66,8 @@ const related =
       <Content />
     </div>
 
-    <ArticleCTA target={entry.data.targetLandingPage} />
+    {/* ArticleCTA expects href (not target). Keep targetLandingPage in frontmatter. */}
+    <ArticleCTA href={entry.data.targetLandingPage || "/art"} />
 
     {related.length > 0 && (
       <section class="related">
@@ -64,7 +75,7 @@ const related =
         <ul>
           {related.map((r) => (
             <li>
-              <a href={`/articles/${r.slug}`}>{r.data.title}</a>
+              <a href={internal(`articles/${r.slug}`)}>{r.data.title}</a>
             </li>
           ))}
         </ul>
