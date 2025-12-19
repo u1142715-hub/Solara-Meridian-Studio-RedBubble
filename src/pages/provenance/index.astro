@@ -3,30 +3,31 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Section from "../../components/ui/Section.astro";
 
 const SAATCHI_PROFILE_URL = "https://www.saatchiart.com/en-au/solara-meridian-studio";
+const REDBUBBLE_PROFILE_URL = "https://www.redbubble.com/people/SamFrederiksen/shop";
 const base = import.meta.env.BASE_URL || "/";
 ---
 
 <BaseLayout
-  title="Provenance & Authenticity · Solara Meridian Studio"
-  description="How limited-edition artworks are produced, authenticated, and fulfilled through Saatchi Art."
+  title="Provenance & Standards · Solara Meridian Studio"
+  description="A factual overview of design standards, fulfilment, and what to expect when purchasing through Redbubble."
 >
   <section class="hero">
     <div class="container hero__inner">
       <div>
-        <div class="hero__kicker">Provenance</div>
-        <h1 class="hero__title">Provenance, authenticity, and edition control</h1>
+        <div class="hero__kicker">Standards</div>
+        <h1 class="hero__title">Provenance, standards, and buyer clarity</h1>
         <p class="hero__subtitle">
-          This page explains how limited-edition artworks presented on this website are produced, authenticated, and fulfilled
-          through Saatchi Art.
+          This page explains how Solara Meridian Studio designs are curated and published, and what Redbubble handles for production,
+          checkout, and delivery. The goal is clarity and consistency—without marketing noise.
         </p>
 
         <div class="hero__actions">
-          <a class="btn btn--primary btn--block-mobile" href={`${base}art/`}>Explore the Art</a>
+          <a class="btn btn--primary btn--block-mobile" href={`${base}art/`}>Explore the collections</a>
           <a class="btn btn--ghost btn--block-mobile" href={`${base}about/`}>About</a>
         </div>
 
         <div class="hero__meta">
-          The wording here is intentionally factual and consistent across the site.
+          Purchases and fulfilment are handled securely through Redbubble.
         </div>
       </div>
     </div>
@@ -36,29 +37,31 @@ const base = import.meta.env.BASE_URL || "/";
     <div class="container">
       <div class="section__heading">
         <div class="section__eyebrow">Roles</div>
-        <h2 class="section__title">Artist responsibilities vs platform responsibilities</h2>
+        <h2 class="section__title">Studio responsibilities vs platform responsibilities</h2>
       </div>
 
       <div class="grid grid--3">
         <div class="card">
-          <div class="card__title">Role of the artist</div>
+          <div class="card__title">Role of the studio</div>
           <p class="card__body">
-            The artist supplies the master digital artwork and defines the edition size for each release.
+            Solara Meridian Studio curates and publishes original designs as high-resolution masters, organised into consistent collections
+            built for long-term relevance and everyday product use.
           </p>
         </div>
 
         <div class="card">
-          <div class="card__title">Role of Saatchi Art</div>
+          <div class="card__title">Role of Redbubble</div>
           <p class="card__body">
-            Saatchi Art manages physical production, enforces edition limits, handles fulfilment and delivery,
-            and supplies a Certificate of Authenticity with each limited edition sold.
+            Redbubble manages secure checkout, production/printing, packaging, shipping, and order support. Product availability, pricing,
+            shipping rates, and delivery timelines are set at the platform level.
           </p>
         </div>
 
         <div class="card">
           <div class="card__title">Identity and privacy</div>
           <p class="card__body">
-            The work is published under an artist name. Legal identity is verified privately where required by platforms and partners.
+            The work is published under the studio name. Personal identity is verified privately where required by platforms and partners.
+            Public pages remain focused on the work and buyer clarity.
           </p>
         </div>
       </div>
@@ -68,32 +71,58 @@ const base = import.meta.env.BASE_URL || "/";
   <Section>
     <div class="container">
       <div class="section__heading">
-        <div class="section__eyebrow">Edition and fulfilment</div>
-        <h2 class="section__title">Edition structure, certificates, and delivery</h2>
+        <div class="section__eyebrow">Standards and expectations</div>
+        <h2 class="section__title">Design quality, previews, and product variation</h2>
       </div>
 
       <div class="grid grid--3">
         <div class="card">
-          <div class="card__title">Edition structure</div>
+          <div class="card__title">Design standards</div>
           <p class="card__body">
-            Each artwork is released as a limited edition of 50. Edition limits are enforced at the platform level.
-            Once an edition is sold out, no further copies are produced.
+            Designs are prepared as high-resolution masters and curated for legibility at small sizes (such as stickers and cases) while
+            remaining clean and composed at larger scales (such as wall art).
           </p>
         </div>
 
         <div class="card">
-          <div class="card__title">Certificate of Authenticity</div>
+          <div class="card__title">Previews and placement</div>
           <p class="card__body">
-            Each limited edition is accompanied by a Certificate of Authenticity provided through Saatchi Art as part of the sale,
-            confirming authenticity and edition details.
+            Redbubble product previews are visual guides. Positioning is set to keep the core focal structure clear, but minor differences
+            may occur between products due to template and print-area constraints.
           </p>
         </div>
 
         <div class="card">
-          <div class="card__title">Fulfilment and framing</div>
+          <div class="card__title">Colour and material variation</div>
           <p class="card__body">
-            Physical production, packaging, and delivery are handled through Saatchi Art. Framing options, where available,
-            are selected at checkout and managed by Saatchi Art.
+            Colour can vary slightly between screens and printed output due to display settings, manufacturing processes, and product materials.
+            This is normal across print-on-demand production.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid--3" style="margin-top: 1rem;">
+        <div class="card">
+          <div class="card__title">Shipping and delivery</div>
+          <p class="card__body">
+            Delivery timelines and shipping costs depend on location and product type. Redbubble provides tracking where available and manages
+            fulfilment updates through the order process.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card__title">Returns and support</div>
+          <p class="card__body">
+            If there is an order issue, Redbubble order support is the fastest path to resolution. The studio focuses on design quality and
+            collection curation; Redbubble resolves production and delivery issues.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card__title">Copyright and integrity</div>
+          <p class="card__body">
+            Designs are published as original works under the Solara Meridian Studio identity. If you believe a listing infringes your rights
+            or is misattributed, report it via Redbubble’s platform reporting tools.
           </p>
         </div>
       </div>
@@ -101,13 +130,28 @@ const base = import.meta.env.BASE_URL || "/";
       <div class="mt-3 text-center">
         <a
           class="btn btn--primary btn--block-mobile"
-          href={SAATCHI_PROFILE_URL}
+          href={REDBUBBLE_PROFILE_URL}
           target="_blank"
           rel="noopener noreferrer"
         >
-          Visit Saatchi Art Profile
+          Open the Redbubble shop
+        </a>
+
+        <a
+          class="btn btn--ghost btn--block-mobile"
+          href={`${base}articles/`}
+        >
+          Read studio notes
         </a>
       </div>
+
+      <p class="card__body" style="margin-top: 1rem; opacity: 0.75; text-align: center;">
+        Separately, the studio maintains a gallery-grade collection on{" "}
+        <a href={SAATCHI_PROFILE_URL} target="_blank" rel="noopener noreferrer">
+          Saatchi Art
+        </a>
+        {" "}featuring distinct works created specifically for that context.
+      </p>
     </div>
   </Section>
 </BaseLayout>
