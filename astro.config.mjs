@@ -9,7 +9,7 @@ export default defineConfig({
   // Critical for GitHub Pages: ensures /route/ maps to /route/index.html
   trailingSlash: "always",
   build: { format: "directory" },
-
+ 
   integrations: [sitemap()],
 
   // Ensure Markdown-generated links respect `base` too
