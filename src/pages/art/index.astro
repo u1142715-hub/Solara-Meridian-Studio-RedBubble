@@ -8,38 +8,38 @@ import ScrollStorySection from "../../components/layout/ScrollStorySection.astro
 const base = import.meta.env.BASE_URL || "/";
 
 const SAATCHI_PROFILE_URL = "https://www.saatchiart.com/en-au/solara-meridian-studio";
-const REDBUBBLE_PROFILE_URL = "https://www.redbubble.com/people/SamFrederiksen/shop"
+const REDBUBBLE_PROFILE_URL = "https://www.redbubble.com/people/SamFrederiksen/shop";
 
 const featuredArtworks = [
   {
-    id: "origin-forms-01",
+    id: "modern-heritage-01",
     data: {
-      title: "Origin Forms I",
-      slug: "origin-forms-i",
+      title: "Modern Heritage I",
+      slug: "modern-heritage-i",
       // served from public/images/...
       thumbnail: `${base}images/art/christmas/christmas1.jpg`,
-      saatchiUrl: "https://www.saatchiart.com/en-au/art/Digital-First-Emergence/2900417/13413289/view",
-      alt: "Origin Forms I – controlled recomposition of AI artefacts into a finished, collectible work",
+      saatchiUrl: REDBUBBLE_PROFILE_URL,
+      alt: "Modern Heritage I – modern symbolic geometry with stone texture and quiet luxury tone",
     },
   },
   {
-    id: "origin-forms-02",
+    id: "modern-heritage-02",
     data: {
-      title: "Origin Forms II",
-      slug: "origin-forms-ii",
+      title: "Modern Heritage II",
+      slug: "modern-heritage-ii",
       thumbnail: `${base}images/art/origin-forms/origin-forms-02.jpg`,
-      saatchiUrl: "https://www.saatchiart.com/en-au/art/Digital-Second-Emergence/2900417/13415099/view",
-      alt: "Origin Forms II – restrained, composed artwork built from intentionally selected AI artefacts",
+      saatchiUrl: REDBUBBLE_PROFILE_URL,
+      alt: "Modern Heritage II – clean emblem composition, marble tones, and timeless balance",
     },
   },
   {
-    id: "origin-forms-03",
+    id: "modern-heritage-03",
     data: {
-      title: "Origin Forms III",
-      slug: "origin-forms-iii",
+      title: "Modern Heritage III",
+      slug: "modern-heritage-iii",
       thumbnail: `${base}images/art/origin-forms/origin-forms-03.jpg`,
-      saatchiUrl: "https://www.saatchiart.com/en-au/art/Digital-Third-Emergence-Origin-Collection/2900417/13415119/view",
-      alt: "Origin Forms III – composed figure study: intentional recomposition, not correction",
+      saatchiUrl: REDBUBBLE_PROFILE_URL,
+      alt: "Modern Heritage III – circular focal symbol with calm contrast and gold-vein accents",
     },
   },
 ];
@@ -47,33 +47,33 @@ const featuredArtworks = [
 
 <BaseLayout>
   <LandingLayout
-    title="Solara Meridian Studio – The Origin Forms"
-    description="A controlled visual language built from AI artefacts—intentionally recomposed rather than corrected."
+    title="Solara Meridian Studio – Modern Heritage"
+    description="A curated Redbubble studio focused on modern symbolic designs, stone textures, and timeless visual balance."
   >
     <!-- HERO -->
     <section class="landing-hero">
       <div class="landing-hero__copy">
         <p class="landing-hero__kicker">Solara Meridian Studio</p>
         <h1 class="landing-hero__title">
-          A controlled visual language built from AI artefacts—intentionally recomposed rather than corrected.
+          Modern symbolic designs with clean geometry, stone textures, and timeless appeal—built for everyday products and long-term relevance.
         </h1>
         <p class="landing-hero__text">
-          The Origin Forms reframes a commonly mocked failure mode into composed, collectible work—guided by restraint,
-          selection, and a preference for quiet authority over noise.
+          Modern Heritage is the evergreen foundation of the shop: calm, textured designs that hold up across seasons and sit confidently on
+          stickers, apparel, cases, and wall art—quiet strength rather than visual noise.
         </p>
         <a class="landing-hero__cta" href={REDBUBBLE_PROFILE_URL} target="_blank" rel="noopener noreferrer">
-          Explore availability on Saatchi Art
+          Explore the Redbubble shop
         </a>
 
         <p class="landing-hero__meta">
-          Payments and delivery are handled directly through Saatchi Art’s secure platform.
+          Secure checkout, production, and delivery are handled directly through Redbubble.
         </p>
       </div>
 
       <div class="landing-hero__visual">
         <img
           src={`${base}images/origin-forms-01.jpg`}
-          alt="Solara Meridian Studio artwork styled in a modern interior setting"
+          alt="Solara Meridian Studio design styled in a modern interior setting"
           loading="eager"
         />
       </div>
@@ -81,27 +81,24 @@ const featuredArtworks = [
 
     <!-- BENEFITS -->
     <section class="landing-section">
-      <h2 class="landing-section__title">Why collectors respond to this body of work</h2>
+      <h2 class="landing-section__title">Why this style works year-round</h2>
       <div class="landing-benefit-grid">
         <article class="landing-benefit">
-          <h3>Controlled recomposition</h3>
+          <h3>Consistent visual language</h3>
           <p>
-            Artefacts are selected, stabilised, and composed into finished works. Scarcity comes from judgement,
-            not output volume.
+            Each design follows a coherent symbolic and material direction, so the shop feels curated and recognisable—never random.
           </p>
         </article>
         <article class="landing-benefit">
-          <h3>Restraint as a signature</h3>
+          <h3>Calm premium feel</h3>
           <p>
-            Precision without coldness; complexity without noise. The work is designed to reveal itself over time,
-            rather than compete for attention.
+            Restraint is the signature: clean geometry, controlled contrast, and stone-toned palettes that look intentional without shouting.
           </p>
         </article>
         <article class="landing-benefit">
-          <h3>Composed for real rooms</h3>
+          <h3>Built for real products</h3>
           <p>
-            Works are tuned to sit confidently in lived spaces and studios—surface treatments may draw on mineral and
-            fracture logic, but the intent remains art-first, not decorative.
+            Designed to read clearly at small sizes and stay elegant at large scale—so the same piece feels right on stickers, cases, apparel, and wall art.
           </p>
         </article>
       </div>
@@ -109,22 +106,22 @@ const featuredArtworks = [
 
     <!-- SCROLL STORY -->
     <ScrollStorySection
-      title="From artefact to finished work"
+      title="How the collections are curated"
       steps={[
         {
-          heading: "Selection, not correction",
+          heading: "Lane first, then variation",
           text:
-            "The process begins by identifying artefacts that already carry visual tension, ambiguity, or structure—elements often dismissed as errors rather than potential.",
+            "Each collection is built around a stable visual lane—materials, geometry, and mood—so every new piece strengthens recognition rather than diluting it.",
         },
         {
-          heading: "Intentional recomposition",
+          heading: "Clarity at thumbnail scale",
           text:
-            "Rather than polishing outputs into something generic, selected artefacts are stabilised and recomposed. Restraint and refusal shape the work as much as addition.",
+            "Designs are evaluated for legibility on small products and previews. The focal structure must hold up before anything is added or expanded.",
         },
         {
-          heading: "Collector-ready resolution",
+          heading: "Timeless over trendy",
           text:
-            "The final work is resolved as a complete composition. Surface treatments may reference stone, metal, or mineral palettes as tools—secondary to intent, not the identity of the work.",
+            "The goal is long-term relevance: restrained palettes, calm contrast, and symbolic structure that remains strong beyond seasonal cycles.",
         },
       ]}
     />
@@ -132,25 +129,26 @@ const featuredArtworks = [
     <!-- FEATURED ARTWORKS -->
     <section class="landing-section">
       <div class="landing-panel">
-        <h2 class="landing-section__title">Featured works from The Origin Forms</h2>
+        <h2 class="landing-section__title">Featured designs from Modern Heritage</h2>
         <p class="landing-section__lead">
-          A curated selection from the first limited-edition series released by Solara Meridian Studio.
+          A small selection from the evergreen collection—modern symbolic geometry, stone texture, and quiet luxury tone.
         </p>
 
-        <ArtworkCarousel artworks={featuredArtworks} label="Featured works from The Origin Forms" />
+        <ArtworkCarousel artworks={featuredArtworks} label="Featured designs from Modern Heritage" />
       </div>
     </section>
 
     <!-- COLLECTIONS OVERVIEW -->
     <section class="landing-section">
-      <h2 class="landing-section__title">Current flagship collection</h2>
+      <h2 class="landing-section__title">Collections and seasonal rotation</h2>
       <p class="landing-section__lead">
-        The Origin Forms is the first limited-edition series released by Solara Meridian Studio.
-        Future collections will be added here as they are completed.
+        The shop maintains a set of always-on core collections, plus a rotating seasonal spotlight during key gifting periods
+        such as Valentine’s Day, Easter, Halloween, and Christmas.
       </p>
       <ul class="landing-collection-list">
-        <li>The Origin Forms – flagship limited-edition series (Saatchi Art)</li>
-        <li>Additional limited collections – currently in development</li>
+        <li>Modern Heritage – evergreen featured collection (year-round)</li>
+        <li>Core collections – always-on lanes with distinct moods and palettes</li>
+        <li>Seasonal spotlight – timeboxed releases aligned with gifting periods</li>
       </ul>
     </section>
 
@@ -158,26 +156,25 @@ const featuredArtworks = [
     <section class="landing-section">
       <h2 class="landing-section__title">Designed for people who curate their atmosphere</h2>
       <p class="landing-section__lead">
-        These works suit collectors, founders, and creatives who want their environment to feel intentional rather than generic—
-        a composed visual language that holds its ground.
+        For buyers who prefer environments that feel intentional rather than generic—calm focal pieces, clean geometry, and stone-toned elegance.
       </p>
       <div class="landing-benefit-grid">
         <article class="landing-benefit">
           <h3>Home interiors</h3>
           <p>
-            Anchor living rooms, bedrooms, and entries with a single, confident focal piece or a tightly composed pair.
+            Add a quiet focal point to living rooms, bedrooms, and entryways—balanced enough to suit neutral spaces and modern decor.
           </p>
         </article>
         <article class="landing-benefit">
           <h3>Studios & offices</h3>
           <p>
-            Give workspaces a subtle, high-end backdrop that looks composed on video calls and in person.
+            A composed visual backdrop that feels premium on video calls and in person—clean, modern, and never distracting.
           </p>
         </article>
         <article class="landing-benefit">
-          <h3>Collectible sets</h3>
+          <h3>Thoughtful gifts</h3>
           <p>
-            Build curated clusters drawn from a shared palette and structure, so a consistent visual language connects your space.
+            Designed to gift well: timeless palettes and symbolic structure that feels personal without relying on novelty or trends.
           </p>
         </article>
       </div>
@@ -188,49 +185,42 @@ const featuredArtworks = [
       <h2 class="landing-section__title">FAQ</h2>
       <div class="landing-faq-list">
         <details>
-          <summary>Where do I purchase the artwork?</summary>
+          <summary>Where do I purchase?</summary>
           <p>
-            All purchasing, payments, and shipping for originals and limited editions are handled through Saatchi Art
-            on the Solara Meridian Studio profile.
+            Purchases are handled through Redbubble on the Solara Meridian Studio shop page, including secure checkout, production, and shipping.
           </p>
         </details>
 
         <details>
-          <summary>Do you offer print-on-demand options?</summary>
+          <summary>What types of products are available?</summary>
           <p>
-            Yes. Separately, the studio also maintains a print-on-demand shop on{" "}
-            <a
-              href="https://www.redbubble.com/people/SamFrederiksen/shop"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Redbubble
-            </a>{" "}
-            featuring distinct designs created specifically for that format.
+            Designs are available across everyday products such as stickers, apparel, phone cases, and home decor—plus wall art options where supported.
           </p>
         </details>
 
         <details>
-          <summary>Will this work with neutral interiors?</summary>
+          <summary>Do you release seasonal collections?</summary>
           <p>
-            Yes. Many works are tuned to sit calmly within neutral spaces. Surface tones may stay quiet, with the option
-            for deeper accents where needed—without overwhelming the room.
+            Yes. A rotating seasonal spotlight appears during key gifting periods (Valentine’s Day, Easter, Halloween, Christmas).
+            Core collections remain available year-round.
           </p>
         </details>
 
         <details>
-          <summary>Can I commission a specific palette?</summary>
+          <summary>Will this suit neutral interiors?</summary>
           <p>
-            Commissions may be available depending on the studio schedule. If open, we’ll refine a palette and scale together
-            and then translate that into a cohesive composition.
+            Yes. Many designs are tuned to sit calmly within neutral spaces, with controlled contrast and texture so the work feels premium without overwhelming a room.
           </p>
         </details>
 
         <details>
-          <summary>How often are new works released?</summary>
+          <summary>Do you also have a gallery-grade collection?</summary>
           <p>
-            New pieces and collections are developed intentionally rather than on a fixed schedule, so the studio’s visual
-            language evolves without overwhelming the core series.
+            Yes. Separately, the studio maintains a gallery-grade collection on{" "}
+            <a href={SAATCHI_PROFILE_URL} target="_blank" rel="noopener noreferrer">
+              Saatchi Art
+            </a>
+            {" "}with distinct works created specifically for that context.
           </p>
         </details>
       </div>
@@ -238,10 +228,10 @@ const featuredArtworks = [
 
     <!-- FINAL CTA -->
     <CTASection
-      title="Collect Solara Meridian Studio originals and limited editions"
-      text="Explore the full catalogue, see current availability, and purchase securely through Saatchi Art."
-      buttonLabel="Visit Saatchi Art profile"
-      href={SAATCHI_PROFILE_URL}
+      title="Explore Solara Meridian Studio on Redbubble"
+      text="Browse Modern Heritage and the full set of curated collections, then purchase securely through Redbubble."
+      buttonLabel="Open the Redbubble shop"
+      href={REDBUBBLE_PROFILE_URL}
     />
   </LandingLayout>
 </BaseLayout>
