@@ -7,39 +7,93 @@ import ScrollStorySection from "../../components/layout/ScrollStorySection.astro
 
 const base = import.meta.env.BASE_URL || "/";
 
-const SAATCHI_PROFILE_URL = "https://www.saatchiart.com/en-au/solara-meridian-studio";
 const REDBUBBLE_PROFILE_URL = "https://www.redbubble.com/people/SamFrederiksen/shop";
 
+// Modern Heritage carousel images
+// Stored in: public/images/art/Modern Heritage/modern-heritage-XX.png
+// URL-encode the space in the folder name.
+const mhPath = `${base}images/art/Modern%20Heritage/`;
+
+// Art page featured works (complements homepage: use a different set)
 const featuredArtworks = [
   {
-    id: "modern-heritage-01",
+    id: "modern-heritage-06",
     data: {
-      title: "Modern Heritage I",
-      slug: "modern-heritage-i",
-      // served from public/images/...
-      thumbnail: `${base}images/art/christmas/christmas1.jpg`,
+      title: "Modern Heritage — Phone Case",
+      slug: "modern-heritage-06",
+      thumbnail: `${mhPath}modern-heritage-06.png`,
       saatchiUrl: REDBUBBLE_PROFILE_URL,
-      alt: "Modern Heritage I – modern symbolic geometry with stone texture and quiet luxury tone",
+      alt: "Modern Heritage design on a phone case mockup — clean symbolic geometry with stone-inspired tones",
     },
   },
   {
-    id: "modern-heritage-02",
+    id: "modern-heritage-07",
     data: {
-      title: "Modern Heritage II",
-      slug: "modern-heritage-ii",
-      thumbnail: `${base}images/art/origin-forms/origin-forms-02.jpg`,
+      title: "Modern Heritage — Phone Case",
+      slug: "modern-heritage-07",
+      thumbnail: `${mhPath}modern-heritage-07.png`,
       saatchiUrl: REDBUBBLE_PROFILE_URL,
-      alt: "Modern Heritage II – clean emblem composition, marble tones, and timeless balance",
+      alt: "Modern Heritage design on a phone case mockup — calm emblem structure with neutral stone texture",
     },
   },
   {
-    id: "modern-heritage-03",
+    id: "modern-heritage-08",
     data: {
-      title: "Modern Heritage III",
-      slug: "modern-heritage-iii",
-      thumbnail: `${base}images/art/origin-forms/origin-forms-03.jpg`,
+      title: "Modern Heritage — Dress",
+      slug: "modern-heritage-08",
+      thumbnail: `${mhPath}modern-heritage-08.png`,
       saatchiUrl: REDBUBBLE_PROFILE_URL,
-      alt: "Modern Heritage III – circular focal symbol with calm contrast and gold-vein accents",
+      alt: "Modern Heritage design on an apparel mockup — readable symbolic focal point with restrained palette",
+    },
+  },
+  {
+    id: "modern-heritage-12",
+    data: {
+      title: "Modern Heritage — Dress",
+      slug: "modern-heritage-12",
+      thumbnail: `${mhPath}modern-heritage-12.png`,
+      saatchiUrl: REDBUBBLE_PROFILE_URL,
+      alt: "Modern Heritage design on an apparel mockup — clean geometry designed to stay legible on fabric",
+    },
+  },
+  {
+    id: "modern-heritage-16",
+    data: {
+      title: "Modern Heritage — Tote Bag",
+      slug: "modern-heritage-16",
+      thumbnail: `${mhPath}modern-heritage-16.png`,
+      saatchiUrl: REDBUBBLE_PROFILE_URL,
+      alt: "Modern Heritage design on a tote bag mockup — neutral symbolic composition designed for everyday carry",
+    },
+  },
+  {
+    id: "modern-heritage-19",
+    data: {
+      title: "Modern Heritage — Drawstring Bag",
+      slug: "modern-heritage-19",
+      thumbnail: `${mhPath}modern-heritage-19.png`,
+      saatchiUrl: REDBUBBLE_PROFILE_URL,
+      alt: "Modern Heritage design on a drawstring bag mockup — coordinated tone and structure for practical products",
+    },
+  },
+  {
+    id: "modern-heritage-25",
+    data: {
+      title: "Modern Heritage — Tote Bag",
+      slug: "modern-heritage-25",
+      thumbnail: `${mhPath}modern-heritage-25.png`,
+      saatchiUrl: REDBUBBLE_PROFILE_URL,
+      alt: "Modern Heritage design on a tote bag mockup — calm symbolic mark with timeless balance",
+    },
+  },
+  {
+    id: "modern-heritage-27",
+    data: {
+      title: "Modern Heritage — Zipper Pouch",
+      slug: "modern-heritage-27",
+      thumbnail: `${mhPath}modern-heritage-27.png`,
+      saatchiUrl: REDBUBBLE_PROFILE_URL,
+      alt: "Modern Heritage design on a zipper pouch mockup — clean structure built to survive thumbnails and crops",
     },
   },
 ];
@@ -59,7 +113,7 @@ const featuredArtworks = [
         </h1>
         <p class="landing-hero__text">
           Modern Heritage is the evergreen foundation of the shop: calm, textured designs that hold up across seasons and sit confidently on
-          stickers, apparel, cases, and wall art—quiet strength rather than visual noise.
+          stickers, apparel, cases, and home decor—quiet strength rather than visual noise.
         </p>
         <a class="landing-hero__cta" href={REDBUBBLE_PROFILE_URL} target="_blank" rel="noopener noreferrer">
           Explore the Redbubble shop
@@ -72,8 +126,8 @@ const featuredArtworks = [
 
       <div class="landing-hero__visual">
         <img
-          src={`${base}images/origin-forms-01.jpg`}
-          alt="Solara Meridian Studio design styled in a modern interior setting"
+          src={`${mhPath}modern-heritage-01.png`}
+          alt="Modern Heritage product preview — modern symbolic design with stone-inspired tones"
           loading="eager"
         />
       </div>
@@ -98,7 +152,7 @@ const featuredArtworks = [
         <article class="landing-benefit">
           <h3>Built for real products</h3>
           <p>
-            Designed to read clearly at small sizes and stay elegant at large scale—so the same piece feels right on stickers, cases, apparel, and wall art.
+            Designed to read clearly at small sizes and stay elegant at large scale—so the same piece feels right on stickers, cases, apparel, and home decor.
           </p>
         </article>
       </div>
@@ -131,7 +185,7 @@ const featuredArtworks = [
       <div class="landing-panel">
         <h2 class="landing-section__title">Featured designs from Modern Heritage</h2>
         <p class="landing-section__lead">
-          A small selection from the evergreen collection—modern symbolic geometry, stone texture, and quiet luxury tone.
+          A small selection from the evergreen collection—modern symbolic geometry, stone texture, and calm visual structure designed to work across products.
         </p>
 
         <ArtworkCarousel artworks={featuredArtworks} label="Featured designs from Modern Heritage" />
@@ -142,13 +196,13 @@ const featuredArtworks = [
     <section class="landing-section">
       <h2 class="landing-section__title">Collections and seasonal rotation</h2>
       <p class="landing-section__lead">
-        The shop maintains a set of always-on core collections, plus a rotating seasonal spotlight during key gifting periods
+        The shop keeps six core collections always visible, plus one rotating seasonal collection during key gifting periods
         such as Valentine’s Day, Easter, Halloween, and Christmas.
       </p>
       <ul class="landing-collection-list">
-        <li>Modern Heritage – evergreen featured collection (year-round)</li>
-        <li>Core collections – always-on lanes with distinct moods and palettes</li>
-        <li>Seasonal spotlight – timeboxed releases aligned with gifting periods</li>
+        <li>Modern Heritage – evergreen foundation (year-round)</li>
+        <li>Six core collections – always-on lanes with distinct moods and palettes</li>
+        <li>Seasonal rotation – timeboxed spotlight aligned with gifting periods</li>
       </ul>
     </section>
 
@@ -194,14 +248,14 @@ const featuredArtworks = [
         <details>
           <summary>What types of products are available?</summary>
           <p>
-            Designs are available across everyday products such as stickers, apparel, phone cases, and home decor—plus wall art options where supported.
+            Designs are available across everyday products such as stickers, apparel, phone cases, tote bags, and home decor—plus wall art options where supported.
           </p>
         </details>
 
         <details>
           <summary>Do you release seasonal collections?</summary>
           <p>
-            Yes. A rotating seasonal spotlight appears during key gifting periods (Valentine’s Day, Easter, Halloween, Christmas).
+            Yes. One rotating seasonal collection appears during key gifting periods (Valentine’s Day, Easter, Halloween, Christmas).
             Core collections remain available year-round.
           </p>
         </details>
@@ -210,17 +264,6 @@ const featuredArtworks = [
           <summary>Will this suit neutral interiors?</summary>
           <p>
             Yes. Many designs are tuned to sit calmly within neutral spaces, with controlled contrast and texture so the work feels premium without overwhelming a room.
-          </p>
-        </details>
-
-        <details>
-          <summary>Do you also have a gallery-grade collection?</summary>
-          <p>
-            Yes. Separately, the studio maintains a gallery-grade collection on{" "}
-            <a href={SAATCHI_PROFILE_URL} target="_blank" rel="noopener noreferrer">
-              Saatchi Art
-            </a>
-            {" "}with distinct works created specifically for that context.
           </p>
         </details>
       </div>
