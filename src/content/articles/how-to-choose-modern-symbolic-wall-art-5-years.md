@@ -55,9 +55,4 @@ Designs that convert well across Redbubble’s volume categories typically:
 - stay clean and centered (strong for stickers and cases)  
 - maintain structure at smaller sizes (apparel chest print)  
 - avoid fragile micro-detail that disappears  
-
-## Where to start
-
-When in doubt, choose a curated lane built for everyday products and long-term relevance.
-
 Start with the flagship collection:  
