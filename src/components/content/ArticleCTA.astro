@@ -2,7 +2,8 @@
 /**
  * ArticleCTA.astro
  * Minimal, safe CTA component used by /articles/[slug].astro
- * GitHub Pages project sites require BASE_URL prefix (e.g. /resethaven/).
+ * GitHub Pages project sites require BASE_URL prefix.
+ * Visibility-enhanced (editorial-style CTA, not button-heavy).
  */
 const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
 
@@ -14,9 +15,8 @@ const {
 } = Astro.props;
 
 // Normalize href:
-// - If it's already absolute (https://...), leave it alone.
-// - If it's root-relative (/art), prefix BASE_URL for project sites.
-// - If it's relative (art), make it root-relative first, then prefix.
+// - Absolute URLs stay untouched
+// - Root-relative URLs get BASE_URL prefix
 const isAbsolute = typeof href === "string" && /^https?:\/\//i.test(href);
 
 let resolvedHref = href;
@@ -32,6 +32,29 @@ if (!isAbsolute) {
   <h2 class="article-cta__title">{title}</h2>
   <p class="article-cta__text">{text}</p>
   <p class="article-cta__actions">
-    <a class="article-cta__link" href={resolvedHref}>{buttonLabel}</a>
+    <a class="article-cta__link" href={resolvedHref}>
+      {buttonLabel}
+    </a>
   </p>
 </aside>
+
+<style>
+  /* Accent color — inherit site token safely */
+  :global(:root) {
+    --article-cta-accent: var(--color-accent, var(--accent, rgba(214, 179, 106, 1)));
+  }
+
+  .article-cta__link {
+    color: var(--article-cta-accent);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-thickness: 1.6px;
+    text-underline-offset: 0.22em;
+    text-decoration-color: rgba(214, 179, 106, 0.65);
+  }
+
+  .article-cta__link:hover,
+  .article-cta__link:focus-visible {
+    text-decoration-color: var(--article-cta-accent);
+  }
+</style>
