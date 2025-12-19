@@ -7,47 +7,77 @@ import { getCollection } from "astro:content";
 
 const base = import.meta.env.BASE_URL || "/";
 
-const SAATCHI_PROFILE_URL = "https://www.saatchiart.com/en-au/solara-meridian-studio/";
-
-// IMPORTANT: set this to your actual Redbubble store URL (keep it quiet + secondary).
+// Redbubble shop (primary conversion)
 const REDBUBBLE_PROFILE_URL = "https://www.redbubble.com/people/SamFrederiksen/shop";
 
 const articles = (await getCollection("articles"))
   .sort((a, b) => (b.data.publishedAt as Date).getTime() - (a.data.publishedAt as Date).getTime())
   .slice(0, 3);
 
-// Homepage featured works
-// Your files exist at: public/images/art/origin-forms/origin-forms-01.jpg etc.
-// On GitHub Pages project sites, use BASE_URL so it becomes /solara-meridian-studio/images/...
+// Homepage featured works (Modern Heritage carousel)
+// Images live at: public/images/art/Modern Heritage/modern-heritage-XX.png
+// Note: URL encoding required for the space in folder name.
+const mhPath = `${base}images/art/Modern%20Heritage/`;
+
 const featuredArtworks = [
   {
     id: "modern-heritage-01",
     data: {
-      title: "Modern Heritage I",
-      slug: "modern-heritage-i",
-      thumbnail: `${base}images/art/christmas/christmas1.jpg`,
+      title: "Modern Heritage — Phone Case",
+      slug: "modern-heritage-01",
+      thumbnail: `${mhPath}modern-heritage-01.png`,
       saatchiUrl: REDBUBBLE_PROFILE_URL,
-      alt: "Modern Heritage I — modern symbolic geometry with stone texture and quiet luxury tone",
+      alt: "Modern Heritage design on a phone case mockup — clean symbolic geometry with stone-inspired tones",
     },
   },
   {
     id: "modern-heritage-02",
     data: {
-      title: "Modern Heritage II",
-      slug: "modern-heritage-ii",
-      thumbnail: `${base}images/art/christmas/christmas2.jpg`,
+      title: "Modern Heritage — Mug",
+      slug: "modern-heritage-02",
+      thumbnail: `${mhPath}modern-heritage-02.png`,
       saatchiUrl: REDBUBBLE_PROFILE_URL,
-      alt: "Modern Heritage II — clean emblem composition, marble tones, and timeless balance",
+      alt: "Modern Heritage design on a mug mockup — calm emblem composition with neutral stone texture",
     },
   },
   {
     id: "modern-heritage-03",
     data: {
-      title: "Modern Heritage III",
-      slug: "modern-heritage-iii",
-      thumbnail: `${base}images/art/christmas/christmas3.jpg`,
+      title: "Modern Heritage — T-Shirt",
+      slug: "modern-heritage-03",
+      thumbnail: `${mhPath}modern-heritage-03.png`,
       saatchiUrl: REDBUBBLE_PROFILE_URL,
-      alt: "Modern Heritage III — circular focal symbol with calm contrast and gold-vein accents",
+      alt: "Modern Heritage design on a t-shirt mockup — centered symbol with balanced geometry",
+    },
+  },
+  {
+    id: "modern-heritage-04",
+    data: {
+      title: "Modern Heritage — Cap",
+      slug: "modern-heritage-04",
+      thumbnail: `${mhPath}modern-heritage-04.png`,
+      saatchiUrl: REDBUBBLE_PROFILE_URL,
+      alt: "Modern Heritage design on a cap mockup — clean emblem mark with quiet contrast",
+    },
+  },
+  {
+    id: "modern-heritage-05",
+    data: {
+      title: "Modern Heritage — Duvet Cover",
+      slug: "modern-heritage-05",
+      thumbnail: `${mhPath}modern-heritage-05.png`,
+      saatchiUrl: REDBUBBLE_PROFILE_URL,
+      alt: "Modern Heritage design on a duvet cover mockup — calm symbolic focal point for bedroom styling",
+    },
+  },
+  {
+    id: "modern-heritage-10",
+    data: {
+      title: "Modern Heritage — Pillow",
+      slug: "modern-heritage-10",
+      thumbnail: `${mhPath}modern-heritage-10.png`,
+      saatchiUrl: REDBUBBLE_PROFILE_URL,
+      alt: "Modern Heritage design on a pillow mockup — coordinated neutral palette for soft furnishings",
     },
   },
 ];
@@ -171,14 +201,6 @@ const featuredArtworks = [
             Open the Redbubble Shop
           </a>
         </div>
-
-        <p class="cta__body" style="margin-top: 1rem; opacity: 0.75;">
-          The studio also maintains a separate gallery-grade collection on{" "}
-          <a href="https://www.saatchiart.com/en-au/solara-meridian-studio" target="_blank" rel="noopener noreferrer">
-            Saatchi Art
-          </a>
-          , featuring distinct works created specifically for that context.
-        </p>
       </div>
     </div>
   </Section>
