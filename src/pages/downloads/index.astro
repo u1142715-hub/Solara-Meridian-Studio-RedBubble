@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import LandingLayout from "../../layouts/LandingLayout.astro";
+
+const pageTitle = "Free Downloads – Quiet Luxury Art Guides";
+const pageDescription =
+  "Free, practical mini-guides for choosing calm statement art, sizing wall pieces, and gifting refined marble-style designs. Official downloads hub for Solara Meridian Studio.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <LandingLayout>
+    <main class="prose prose-invert max-w-3xl mx-auto">
+      <h1>Free Downloads – Quiet Luxury Art Guides</h1>
+
+      <p>
+        These are free, short guides designed to help you choose calm statement art and gift-worthy
+        pieces that fit real rooms. If you’re looking for the full catalogue, the primary destination
+        is the Redbubble shop.
+      </p>
+
+      <h2>Available downloads</h2>
+
+      <ul>
+        <li>
+          <strong>End-of-Year Statement Piece Gift Guide (Quiet Luxury)</strong><br />
+          A practical checklist for choosing a room-safe statement piece, with sizing and palette notes.<br />
+          <a href="https://resethaven.gumroad.com/" rel="noopener noreferrer">Download on Gumroad</a>
+        </li>
+      </ul>
+
+      <hr />
+
+      <p>
+        Prefer browsing by collection mood instead? Use the site’s main navigation or return to the
+        collections hub.
+      </p>
+    </main>
+  </LandingLayout>
+</BaseLayout>
