@@ -2,8 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ArticleCTA from "../../components/content/ArticleCTA.astro";
 import { getCollection } from "astro:content";
-import ArticleDownloadsLink from "../components/content/ArticleDownloadsLink.astro";
-
+import ArticleDownloadsLink from "../../components/content/ArticleDownloadsLink.astro";
 
 const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, "") + "/";
 
@@ -69,6 +68,7 @@ const metaDescription =
     </header>
 
     <div class="article-prose">
+      <ArticleDownloadsLink />
       <Content />
     </div>
 
