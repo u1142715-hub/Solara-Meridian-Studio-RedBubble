@@ -1,23 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Section from "../components/ui/Section.astro";
-import ArticleList from "../components/content/ArticleList.astro";
 import ArtworkCarousel from "../components/content/ArtworkCarousel.astro";
-import { getCollection } from "astro:content";
 
 const base = import.meta.env.BASE_URL || "/";
 
 // Redbubble shop (primary conversion)
 const REDBUBBLE_PROFILE_URL = "https://www.redbubble.com/people/SamFrederiksen/shop";
-
-let articles = [];
-try {
-  articles = (await getCollection("articles"))
-    .sort((a, b) => (b.data.publishedAt as Date).getTime() - (a.data.publishedAt as Date).getTime())
-    .slice(0, 3);
-} catch (err) {
-  articles = [];
-}
 
 // Homepage featured works (Modern Heritage carousel)
 // Images live at: public/images/art/Modern Heritage/modern-heritage-XX.png
@@ -209,22 +198,4 @@ const featuredArtworks = [
       </div>
     </div>
   </Section>
-
-  <!-- ARTICLES (SUPPORTING DISCOVERY LAYER) -->
-  {articles.length > 0 && (
-    <Section>
-      <div class="container">
-        <div class="section__heading">
-          <div class="section__eyebrow">Studio notes</div>
-          <h2 class="section__title">Notes on collections, materials, and intent.</h2>
-        </div>
-
-        <ArticleList articles={articles} />
-
-        <div class="mt-3 text-center">
-          <a class="btn btn--ghost btn--block-mobile" href={`${base}articles/`}>View all articles</a>
-        </div>
-      </div>
-    </Section>
-  )}
 </BaseLayout>
