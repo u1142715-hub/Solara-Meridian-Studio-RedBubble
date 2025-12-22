@@ -15,9 +15,10 @@ try {
   articles = (await getCollection("articles"))
     .sort((a, b) => (b.data.publishedAt as Date).getTime() - (a.data.publishedAt as Date).getTime())
     .slice(0, 3);
-} catch (e) {
+} catch (err) {
   articles = [];
 }
+
 
 
 // Homepage featured works (Modern Heritage carousel)
