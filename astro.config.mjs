@@ -3,7 +3,7 @@ import sitemap from "@astrojs/sitemap";
 import rehypePrefixBaseLinks from "./src/utils/rehypePrefixBaseLinks.mjs";
 
 export default defineConfig({
-  site: "https://u1142715-hub.github.io",
+  site: "https://u1142715-hub.github.io/Solara-Meridian-Studio-RedBubble/",
   base: "/Solara-Meridian-Studio-RedBubble",
 
   // Critical for GitHub Pages: ensures /route/ maps to /route/index.html
